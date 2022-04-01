@@ -30,7 +30,7 @@ export default function Home() {
 				setChangingText('developer of the front-end.')
 				break
 			case 1:
-				setChangingText('manipluator of Javascript.')
+				setChangingText('manipulator of Javascript.')
 				break
 			case 2:
 				setChangingText('solver of problems.')
