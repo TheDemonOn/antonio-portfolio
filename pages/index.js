@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useLayoutEffect } from 'react'
 
 import Head from 'next/head'
 // import Image from 'next/image'
@@ -13,44 +13,34 @@ export default function Home() {
 	// This is a custom hook.
 	useInterval(() => {
 		setChangingTextNum(changingTextNum + 1)
-		setTimeout(() => {
-			setChangingStyle(styles.changingTextOutro)
-		}, 2500)
 	}, 3000)
 
+	const [changingStyle, setChangingStyle] = useState(styles.changingTextIntro)
+	const [rotatingElements, setRotatingElements] = useState()
+	// This useEffect takes all the elements within the rotating text section and turns them into an array.
 	useEffect(() => {
-		setTimeout(() => {
-			setChangingStyle(styles.changingTextOutro)
-		}, 2500)
+		let e = document.getElementsByClassName(styles.changing)[0]
+		setRotatingElements(Array.from(e.children))
 	}, [])
 
-	useEffect(() => {
-		switch (changingTextNum) {
-			case 0:
-				setChangingText('developer of the front-end.')
-				break
-			case 1:
-				setChangingText('manipulator of Javascript.')
-				break
-			case 2:
-				setChangingText('solver of problems.')
-				break
-			case 3:
-				setChangingText('lover of cats.')
-				break
-			case 4:
-				setChangingText('VR enthusiast.')
-				break
-			default:
+	// This useEffect controls the changing text.
+	useLayoutEffect(() => {
+		if (rotatingElements) {
+			// changingTextNum is used to access the array of changing elements.
+			// If it were to point to an index that doesn't exist it will reset
+			if (changingTextNum > rotatingElements.length - 1) {
 				setChangingTextNum(0)
+				rotatingElements[rotatingElements.length - 1].removeAttribute('class')
+			} else {
+				// This sets the index element to be the active class.
+				rotatingElements[changingTextNum].setAttribute('class', styles.active)
+				// This removes the previous active class so only one exists.
+				if (rotatingElements[changingTextNum - 1]) {
+					rotatingElements[changingTextNum - 1].removeAttribute('class')
+				}
+			}
 		}
 	}, [changingTextNum])
-
-	const [changingStyle, setChangingStyle] = useState(styles.changingTextIntro)
-
-	useEffect(() => {
-		setChangingStyle(styles.changingTextIntro)
-	}, [changingText])
 
 	return (
 		<>
@@ -58,9 +48,30 @@ export default function Home() {
 				<title>Antonio Zamora</title>
 			</Head>
 			<header>Code Antonio</header>
-			<main>
-				<p>I am Antonio,</p>
-				<h2 className={changingStyle}>{changingText}</h2>
+			<main className={styles.main}>
+				<div className={styles.firstSection}>
+					<div className={styles.splitLeft}>
+						<p>I am Antonio,</p>
+						<ul className={styles.changing}>
+							<li className={styles.active}>
+								<span>developer of the front-end.</span>
+							</li>
+							<li>
+								<span>manipulator of Javascript.</span>
+							</li>
+							<li>
+								<span>solver of problems.</span>
+							</li>
+							<li>
+								<span>lover of cats.</span>
+							</li>
+							<li>
+								<span>VR enthusiast.</span>
+							</li>
+						</ul>
+					</div>
+					<div className={styles.splitRight}></div>
+				</div>
 			</main>
 		</>
 	)

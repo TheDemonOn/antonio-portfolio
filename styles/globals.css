@@ -22,3 +22,17 @@ a {
 * {
 	box-sizing: border-box;
 }
+
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	list-style: none;
+}
+
+header {
+	display: flex;
+	justify-content: center;
+}
