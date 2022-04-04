@@ -1,20 +1,20 @@
-.be {
-	position: absolute;
+.changing {
+	position: relative;
+	height: 120px;
+	text-align: center;
+	border-bottom: 1px solid #030303;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
-
+/* .changing li are the elements that are revealed when the active class is applied to it. */
 .changing li {
-	position: absolute;
 	opacity: 0;
 }
-
 .active {
 	opacity: 1 !important;
 }
-
-.changing .active::before {
-	transform: translateX(100%);
-}
-
+/* This ::before is used to obscure the text by being the same color as the background to make it appear as if the text is disappearing. */
 .changing li::before {
 	content: '';
 	display: block;
@@ -23,9 +23,26 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: #fcf9f4;
-	z-index: 2;
+	background-color: #fcf9f4;
+	/* z-index: 2; */
+	transform: scaleX(100%);
 	transition: transform 0.6s ease-out;
+	transform-origin: right;
+}
+
+.changing .active::before {
+	transform: scaleX(0);
+	transition-delay: 0.4s;
+}
+
+.changing > * {
+	position: absolute;
+	width: 100%;
+	transform-origin: center;
+	transform-style: preserve-3d;
+	transition: opacity 0.6s, transform 1s ease;
+
+	font-size: 38px;
 }
 
 .main {
@@ -39,9 +56,51 @@
 
 .splitLeft {
 	width: 50%;
-	border: solid;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 .splitRight {
 	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.firstText {
+	width: 31rem;
+	max-width: 90%;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	/* align-items: center; */
+}
+
+.secondSection {
+	display: flex;
+	overflow: hidden;
+	min-height: 30rem;
+	background-color: #c2dab8;
+}
+
+.project {
+	/* border: solid; */
+	max-width: 33rem;
+}
+
+.projectSub {
+	padding-left: 2rem;
+	margin-top: 1rem;
+}
+
+.link {
+	margin-top: 2rem;
+}
+
+.pictureFrame {
 	border: solid;
+	width: 32rem;
+	height: 18rem;
 }

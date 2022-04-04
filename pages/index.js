@@ -51,26 +51,49 @@ export default function Home() {
 			<main className={styles.main}>
 				<div className={styles.firstSection}>
 					<div className={styles.splitLeft}>
-						<p>I am Antonio,</p>
-						<ul className={styles.changing}>
-							<li className={styles.active}>
-								<span>developer of the front-end.</span>
-							</li>
-							<li>
-								<span>manipulator of Javascript.</span>
-							</li>
-							<li>
-								<span>solver of problems.</span>
-							</li>
-							<li>
-								<span>lover of cats.</span>
-							</li>
-							<li>
-								<span>VR enthusiast.</span>
-							</li>
-						</ul>
+						<div className={styles.firstText}>
+							<p>I am Antonio,</p>
+							<ul className={styles.changing}>
+								<li className={styles.active}>
+									<span>developer of the front-end.</span>
+								</li>
+								<li>
+									<span>manipulator of Javascript.</span>
+								</li>
+								<li>
+									<span>solver of problems.</span>
+								</li>
+								<li>
+									<span>lover of cats.</span>
+								</li>
+								<li>
+									<span>enthusiast of VR.</span>
+								</li>
+							</ul>
+						</div>
 					</div>
-					<div className={styles.splitRight}></div>
+					<div id="video" className={styles.splitRight}>
+						Video here
+					</div>
+				</div>
+				<div className={styles.secondSection}>
+					<div className={styles.splitLeft}>
+						<div className={styles.project}>
+							<h3>Project1</h3>
+							<div className={styles.projectSub}>
+								<h2>Autojack</h2>
+								<section>
+									An awe-inspiring display of my radical skills. Autojack is designed to do play
+									Blackjack so the user doesn't have to. But they totally can. And that's the beauty
+									of it. Ask yourself, where would we be without Autojack?
+								</section>
+								<a className={styles.link}>Get Jacked.</a>
+							</div>
+						</div>
+					</div>
+					<div className={styles.splitRight}>
+						<div className={styles.pictureFrame}></div>
+					</div>
 				</div>
 			</main>
 		</>
