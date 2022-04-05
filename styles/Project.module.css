@@ -1,0 +1,48 @@
+.fullSection {
+	display: flex;
+	overflow: hidden;
+	min-height: 100vh;
+}
+.splitLeft {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.splitRight {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.project {
+	max-width: 33rem;
+}
+.projectSub {
+	padding-left: 2rem;
+	margin-top: 1rem;
+}
+.link {
+	margin-top: 2rem;
+}
+.splitLeft {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.splitRight {
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.pictureFrame {
+	border: solid;
+	width: 32rem;
+	height: 18rem;
+}

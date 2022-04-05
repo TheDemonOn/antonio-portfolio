@@ -4,6 +4,7 @@ import Head from 'next/head'
 // import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
+import Project from '../components/Project'
 import useInterval from '../hooks/useInterval'
 
 export default function Home() {
@@ -76,24 +77,31 @@ export default function Home() {
 						Video here
 					</div>
 				</div>
-				<div className={styles.secondSection}>
-					<div className={styles.splitLeft}>
-						<div className={styles.project}>
-							<h3>Project1</h3>
-							<div className={styles.projectSub}>
-								<h2>Autojack</h2>
-								<section>
-									An awe-inspiring display of my radical skills. Autojack is designed to do play
-									Blackjack so the user doesn't have to. But they totally can. And that's the beauty
-									of it. Ask yourself, where would we be without Autojack?
-								</section>
-								<a className={styles.link}>Get Jacked.</a>
-							</div>
-						</div>
-					</div>
-					<div className={styles.splitRight}>
-						<div className={styles.pictureFrame}></div>
-					</div>
+				<div id="projectList">
+					<Project
+						name="Autojack"
+						color="#e3ddf3"
+						linkName="Get Jacked."
+						link="https://autojack.netlify.app/"
+						content="An awe-inspiring display of my radical skills. Autojack is designed to do play
+								Blackjack so the user doesn't have to. But they totally can. And that's the beauty
+								of it. Ask yourself, where would we be without Autojack?"
+					/>
+					<Project
+						name="Rhyming Word Generator"
+						color="#8db9d0"
+						linkName="Generate Nonsense."
+						link="https://wordgenerator.netlify.app/"
+						content="My first project, an exploration of Javascript, turned into a deep dive on the structure 
+						of English words. This generator produces words unknown to man, and makes them mostly rhyme. Instant poetry."
+					/>
+					<Project name="Random Test" color="#c2dab8" linkName="Be Random." content="Some words." />
+					<Project
+						name="First Portfolio"
+						color="#B7B6CE"
+						linkName="Be Random."
+						content="Some words."
+					/>
 				</div>
 			</main>
 		</>

@@ -77,30 +77,3 @@
 	flex-direction: column;
 	/* align-items: center; */
 }
-
-.secondSection {
-	display: flex;
-	overflow: hidden;
-	min-height: 30rem;
-	background-color: #c2dab8;
-}
-
-.project {
-	/* border: solid; */
-	max-width: 33rem;
-}
-
-.projectSub {
-	padding-left: 2rem;
-	margin-top: 1rem;
-}
-
-.link {
-	margin-top: 2rem;
-}
-
-.pictureFrame {
-	border: solid;
-	width: 32rem;
-	height: 18rem;
-}
