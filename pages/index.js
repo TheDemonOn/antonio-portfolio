@@ -6,6 +6,7 @@ import styles from '../styles/Home.module.css'
 
 import Project from '../components/Project'
 import useInterval from '../hooks/useInterval'
+import useIntersect from '../hooks/useIntersect'
 
 export default function Home() {
 	const [changingTextNum, setChangingTextNum] = useState(0)
@@ -43,6 +44,37 @@ export default function Home() {
 		}
 	}, [changingTextNum])
 
+	const [bgColor, setBgColor] = useState('#e3ddf3')
+
+	useEffect(() => {
+		let bg = document.getElementById('projectList')
+		bg.setAttribute('style', `background-color: ${bgColor};`)
+	}, [bgColor])
+
+	// This custom hook is the result of a lot of headache and misunderstanding about how to use the original implementation I got the design from.
+	// This version is my modified version which uses the Intersection Observer Api.
+	// Because the area I am trying to measure the progress of scrolling through is larger than the viewport I have the rootMargin set to be 400% since the area I am trying to measure is 4 times the viewport height.
+	const [ref] = useIntersect({
+		threshold: [0.35, 0.6, 0.85],
+		rootMargin: '400% 0px 0px 0px',
+		func: (e) => {
+			let ratio = e[0].intersectionRatio
+			if (ratio > 0.85) {
+				// First portfolio
+				setBgColor('#A4BFCB')
+			} else if (ratio >= 0.6) {
+				// Random Test
+				setBgColor('#D6C3AE')
+			} else if (ratio >= 0.35) {
+				// Rhyming Word Generator
+				setBgColor('#c2dab8')
+			} else {
+				// Autojack
+				setBgColor('#e3ddf3')
+			}
+		},
+	})
+
 	return (
 		<>
 			<Head>
@@ -77,7 +109,7 @@ export default function Home() {
 						Video here
 					</div>
 				</div>
-				<div id="projectList">
+				<div id="projectList" ref={ref}>
 					<Project
 						name="Autojack"
 						color="#e3ddf3"

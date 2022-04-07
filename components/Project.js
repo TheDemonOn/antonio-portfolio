@@ -9,7 +9,7 @@ export default function Project({ name, color, linkName, link, img, content }) {
 
 	return (
 		<>
-			<div className={styles.fullSection} style={{ backgroundColor: color }}>
+			<div className={styles.fullSection}>
 				<div className={styles.splitLeft}>
 					<div className={styles.project}>
 						<h3>Project</h3>

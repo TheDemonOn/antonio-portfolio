@@ -49,3 +49,7 @@ header {
 #video {
 	background-color: #8db9d0;
 }
+
+#projectList {
+	transition: all 0.5s;
+}
