@@ -54,20 +54,24 @@ export default function Home() {
 	// This custom hook is the result of a lot of headache and misunderstanding about how to use the original implementation I got the design from.
 	// This version is my modified version which uses the Intersection Observer Api.
 	// Because the area I am trying to measure the progress of scrolling through is larger than the viewport I have the rootMargin set to be 400% since the area I am trying to measure is 4 times the viewport height.
+	const thresholdArr = [0.29, 0.49, 0.69, 0.89]
 	const [ref] = useIntersect({
-		threshold: [0.36, 0.62, 0.87],
-		rootMargin: '400% 0px 0px 0px',
+		threshold: thresholdArr,
+		rootMargin: '500% 0px 0px 0px',
 		func: (e) => {
 			let ratio = e[0].intersectionRatio
-			if (ratio > 0.87) {
+			if (ratio > thresholdArr[3]) {
 				// First portfolio
 				setBgColor('#A4BFCB')
-			} else if (ratio >= 0.62) {
+			} else if (ratio >= thresholdArr[2]) {
 				// Random Test
 				setBgColor('#D6C3AE')
-			} else if (ratio >= 0.36) {
-				// Rhyming Word Generator
+			} else if (ratio >= thresholdArr[1]) {
+				// Shop Antonio
 				setBgColor('#c2dab8')
+			} else if (ratio >= thresholdArr[0]) {
+				// Rhyming Word Generator
+				setBgColor('#8db9d0')
 			} else {
 				// Autojack
 				setBgColor('#e3ddf3')
@@ -133,16 +137,23 @@ export default function Home() {
 						of English words. This generator produces words unknown to man, and makes them mostly rhyme. Instant poetry."
 					/>
 					<Project
+						name="Shop Antonio"
+						color="#B7B6CE"
+						position="3"
+						linkName="Browse my fake store."
+						content="E-commerce."
+					/>
+					<Project
 						name="Random Test"
 						color="#c2dab8"
-						position="3"
+						position="4"
 						linkName="Be Random."
 						content="Some words."
 					/>
 					<Project
 						name="First Portfolio"
 						color="#B7B6CE"
-						position="4"
+						position="5"
 						linkName="Be Random."
 						content="Some words."
 					/>
