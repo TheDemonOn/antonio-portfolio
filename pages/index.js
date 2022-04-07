@@ -55,17 +55,17 @@ export default function Home() {
 	// This version is my modified version which uses the Intersection Observer Api.
 	// Because the area I am trying to measure the progress of scrolling through is larger than the viewport I have the rootMargin set to be 400% since the area I am trying to measure is 4 times the viewport height.
 	const [ref] = useIntersect({
-		threshold: [0.35, 0.6, 0.85],
+		threshold: [0.36, 0.62, 0.87],
 		rootMargin: '400% 0px 0px 0px',
 		func: (e) => {
 			let ratio = e[0].intersectionRatio
-			if (ratio > 0.85) {
+			if (ratio > 0.87) {
 				// First portfolio
 				setBgColor('#A4BFCB')
-			} else if (ratio >= 0.6) {
+			} else if (ratio >= 0.62) {
 				// Random Test
 				setBgColor('#D6C3AE')
-			} else if (ratio >= 0.35) {
+			} else if (ratio >= 0.36) {
 				// Rhyming Word Generator
 				setBgColor('#c2dab8')
 			} else {
@@ -80,7 +80,10 @@ export default function Home() {
 			<Head>
 				<title>Antonio Zamora</title>
 			</Head>
-			<header>Code Antonio</header>
+			<header>
+				<a href="#projectList">Projects</a>
+				<span>Code Antonio</span>
+			</header>
 			<main className={styles.main}>
 				<div className={styles.firstSection}>
 					<div className={styles.splitLeft}>
@@ -113,6 +116,7 @@ export default function Home() {
 					<Project
 						name="Autojack"
 						color="#e3ddf3"
+						position="1"
 						linkName="Get Jacked."
 						link="https://autojack.netlify.app/"
 						content="An awe-inspiring display of my radical skills. Autojack is designed to do play
@@ -122,15 +126,23 @@ export default function Home() {
 					<Project
 						name="Rhyming Word Generator"
 						color="#8db9d0"
+						position="2"
 						linkName="Generate Nonsense."
 						link="https://wordgenerator.netlify.app/"
 						content="My first project, an exploration of Javascript, turned into a deep dive on the structure 
 						of English words. This generator produces words unknown to man, and makes them mostly rhyme. Instant poetry."
 					/>
-					<Project name="Random Test" color="#c2dab8" linkName="Be Random." content="Some words." />
+					<Project
+						name="Random Test"
+						color="#c2dab8"
+						position="3"
+						linkName="Be Random."
+						content="Some words."
+					/>
 					<Project
 						name="First Portfolio"
 						color="#B7B6CE"
+						position="4"
 						linkName="Be Random."
 						content="Some words."
 					/>
