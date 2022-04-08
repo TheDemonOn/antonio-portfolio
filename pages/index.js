@@ -45,6 +45,29 @@ export default function Home() {
 	}, [changingTextNum])
 
 	const [bgColor, setBgColor] = useState('#e3ddf3')
+	const [sideNavArr, setSideNavArr] = useState([0, 0, 0, 0, 0])
+
+	const updateSideNav = (x) => {
+		if (sideNavArr[x] !== 1) {
+			sideNavArr.fill(0)
+			sideNavArr[x] = 1
+			setSideNavArr([...sideNavArr])
+		}
+	}
+
+	useEffect(() => {
+		let e = document.getElementById('side-nav')
+		console.log(e.children)
+		let arr = Array.from(e.children)
+		let index = sideNavArr.findIndex((x) => x === 1)
+		console.log(index)
+		if (index !== -1) {
+			arr.map((e) => {
+				e.removeAttribute('class')
+			})
+			arr[index].setAttribute('class', styles.activeSideNav)
+		}
+	}, [sideNavArr])
 
 	useEffect(() => {
 		let bg = document.getElementById('projectList')
@@ -63,18 +86,23 @@ export default function Home() {
 			if (ratio > thresholdArr[3]) {
 				// First portfolio
 				setBgColor('#A4BFCB')
+				updateSideNav(4)
 			} else if (ratio >= thresholdArr[2]) {
 				// Random Test
 				setBgColor('#D6C3AE')
+				updateSideNav(3)
 			} else if (ratio >= thresholdArr[1]) {
 				// Shop Antonio
 				setBgColor('#c2dab8')
+				updateSideNav(2)
 			} else if (ratio >= thresholdArr[0]) {
 				// Rhyming Word Generator
 				setBgColor('#8db9d0')
+				updateSideNav(1)
 			} else {
 				// Autojack
 				setBgColor('#e3ddf3')
+				updateSideNav(0)
 			}
 		},
 	})
@@ -124,6 +152,15 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="projectList" ref={ref}>
+					{/* <div className={styles.navContainer}> */}
+					<nav id="side-nav" className={styles.sideNav}>
+						<a href="#1" className={styles.activeSideNav}></a>
+						<a href="#2"></a>
+						<a href="#3"></a>
+						<a href="#4"></a>
+						<a href="#5"></a>
+					</nav>
+					{/* </div> */}
 					<Project
 						name="Autojack"
 						color="#e3ddf3"

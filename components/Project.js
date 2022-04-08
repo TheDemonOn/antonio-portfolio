@@ -9,7 +9,7 @@ export default function Project({ name, color, linkName, link, img, content, pos
 
 	return (
 		<>
-			<div className={styles.fullSection}>
+			<div className={styles.fullSection} id={position}>
 				<div className={styles.right}>
 					<div className={styles.pictureFrame}></div>
 				</div>
