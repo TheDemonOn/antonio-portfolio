@@ -84,9 +84,16 @@ export default function Home() {
 			<Head>
 				<title>Antonio Zamora</title>
 			</Head>
-			<header>
-				<a href="#projectList">Projects</a>
-				<span>Code Antonio</span>
+			<header className={styles.header}>
+				<div>
+					<a href="#projectList">Projects</a>
+					<a>About</a>
+				</div>
+				<span>ANTONIO ZAMORA</span>
+				<div>
+					<a>Contact</a>
+					<a>GitHub</a>
+				</div>
 			</header>
 			<main className={styles.main}>
 				<div className={styles.firstSection}>

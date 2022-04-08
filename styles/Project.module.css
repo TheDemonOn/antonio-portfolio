@@ -32,7 +32,33 @@
 	font-size: 1.3rem;
 	text-decoration: underline;
 	text-underline-offset: 0.4rem;
+	z-index: 2;
 }
+
+.link::before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: #fcf9f4;
+	opacity: 0;
+	z-index: -1;
+	transform: scaleX(0%);
+	transform-origin: left;
+	transition: opacity 1s, transform 0.5s ease;
+}
+
+.link:hover::before {
+	position: absolute;
+	opacity: 0.65;
+	transform: scaleX(100%);
+	transform-origin: left;
+	transition: transform 0.5s ease;
+}
+
 .splitLeft {
 	width: 50%;
 	display: flex;
@@ -125,6 +151,7 @@
 		text-decoration: underline;
 		text-underline-offset: 0.4rem;
 	}
+
 	.projectTitle {
 		margin-top: 1rem;
 		font-size: 1.8rem;

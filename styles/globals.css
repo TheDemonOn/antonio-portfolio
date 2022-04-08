@@ -30,6 +30,15 @@ a {
 	box-sizing: border-box;
 }
 
+a {
+	cursor: pointer;
+}
+
+/* a:hover {
+	text-decoration: underline;
+	text-underline-offset: 0.4rem;
+} */
+
 ul {
 	margin: 0;
 	padding: 0;
@@ -37,13 +46,6 @@ ul {
 
 ul li {
 	list-style: none;
-}
-
-header {
-	position: absolute;
-	width: 100%;
-	display: flex;
-	justify-content: center;
 }
 
 #video {
