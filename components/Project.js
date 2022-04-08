@@ -10,20 +10,20 @@ export default function Project({ name, color, linkName, link, img, content, pos
 	return (
 		<>
 			<div className={styles.fullSection}>
-				<div className={styles.splitLeft}>
+				<div className={styles.right}>
+					<div className={styles.pictureFrame}></div>
+				</div>
+				<div className={styles.left}>
 					<div className={styles.project}>
-						<h3>Project {position}</h3>
+						<h3 className={styles.altText}>PROJECT {position}</h3>
 						<div className={styles.projectSub}>
-							<h2>{name}</h2>
-							<section>{content}</section>
+							<h2 className={styles.projectTitle}>{name}</h2>
+							<section className={styles.description}>{content}</section>
 							<a className={styles.link} href={link}>
 								{linkName}
 							</a>
 						</div>
 					</div>
-				</div>
-				<div className={styles.splitRight}>
-					<div className={styles.pictureFrame}></div>
 				</div>
 			</div>
 		</>

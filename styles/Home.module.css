@@ -77,3 +77,30 @@
 	flex-direction: column;
 	/* align-items: center; */
 }
+
+@media (max-width: 800px) {
+	.firstSection {
+		display: flex;
+		min-height: unset;
+		overflow: hidden;
+		justify-content: center;
+		flex-direction: column;
+		align-items: center;
+	}
+	.splitLeft {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 400px;
+	}
+	.splitRight {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		min-height: 400px;
+	}
+}

@@ -2,30 +2,36 @@
 	display: flex;
 	overflow: hidden;
 	min-height: 100vh;
+	flex-direction: row-reverse;
 }
-.splitLeft {
+.left {
+	position: relative;
+	top: 12.8rem;
+	width: 50%;
+	padding-left: 9%;
+}
+.right {
 	width: 50%;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	align-items: center;
-}
-.splitRight {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 }
 .project {
 	max-width: 33rem;
 }
 .projectSub {
-	padding-left: 2rem;
-	margin-top: 1rem;
+	padding-left: 1.2rem;
+	margin-top: 2.1rem;
+	font-family: aktiv-grotesk, sans-serif;
+	font-weight: lighter;
 }
 .link {
-	margin-top: 2rem;
+	position: absolute;
+	margin-top: 5rem;
+	/* top: 21rem; */
+	font-size: 1.3rem;
+	text-decoration: underline;
+	text-underline-offset: 0.4rem;
 }
 .splitLeft {
 	width: 50%;
@@ -43,6 +49,96 @@
 }
 .pictureFrame {
 	border: solid;
-	width: 32rem;
-	height: 18rem;
+	width: 42vw;
+	height: 23.625vw;
+}
+
+.altText {
+	font-family: aktiv-grotesk-extended, sans-serif;
+	font-weight: 500;
+	font-style: normal;
+	font-size: 1.3rem;
+}
+
+.projectTitle {
+	font-size: 2.6rem;
+}
+
+.description {
+	margin-top: 1rem;
+	font-size: 1.3rem;
+	line-height: 2rem;
+}
+
+@media (max-width: 800px) {
+	.fullSection {
+		display: flex;
+		overflow: unset;
+		min-height: 100vh;
+		flex-direction: column;
+	}
+	.left {
+		all: unset;
+		position: relative;
+		width: min(100% - 15%);
+		margin-inline: auto;
+		/* border: solid; */
+		margin-top: 2rem;
+	}
+	.right {
+		/* width: 50%;
+		display: flex;
+		flex-direction: column;
+		justify-content: center; */
+		all: unset;
+		position: relative;
+		width: min(100% - 15%);
+		margin-inline: auto;
+		margin-top: 10rem;
+	}
+	.pictureFrame {
+		/* width: 42vw;
+		height: 23.625vw; */
+		all: unset;
+		display: block;
+		border: solid;
+		height: 45vw;
+		width: 100%;
+	}
+
+	.project {
+		/* max-width: 33rem; */
+		all: unset;
+	}
+	.projectSub {
+		/* padding-left: 1.2rem;
+		margin-top: 2.1rem; */
+		all: unset;
+		font-family: aktiv-grotesk, sans-serif;
+		font-weight: lighter;
+	}
+	.link {
+		all: unset;
+		position: absolute;
+		margin-top: 1rem;
+		font-size: 1.15rem;
+		text-decoration: underline;
+		text-underline-offset: 0.4rem;
+	}
+	.projectTitle {
+		margin-top: 1rem;
+		font-size: 1.8rem;
+	}
+
+	.description {
+		margin-top: 1rem;
+		font-size: 1rem;
+		line-height: 1.7rem;
+	}
+	.altText {
+		font-family: aktiv-grotesk-extended, sans-serif;
+		font-weight: 500;
+		font-style: normal;
+		font-size: 0.9rem;
+	}
 }

@@ -11,6 +11,7 @@ export default function Document() {
 				<meta name="language" content="English" />
 				{/* <meta name="revised" content="March 22nd, 2022" /> */}
 				<meta name="HandheldFriendly" content="true" />
+				<link rel="stylesheet" href="https://use.typekit.net/hah6qsj.css" />
 
 				{/* <link rel="icon" href="/favicon.ico" sizes="any" />
 				<link rel="icon" href="/favicon.svg" type="image/svg+xml" /> */}
