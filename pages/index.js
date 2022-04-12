@@ -57,10 +57,8 @@ export default function Home() {
 
 	useEffect(() => {
 		let e = document.getElementById('side-nav')
-		console.log(e.children)
 		let arr = Array.from(e.children)
 		let index = sideNavArr.findIndex((x) => x === 1)
-		console.log(index)
 		if (index !== -1) {
 			arr.map((e) => {
 				e.removeAttribute('class')
@@ -76,7 +74,7 @@ export default function Home() {
 
 	// This custom hook is the result of a lot of headache and misunderstanding about how to use the original implementation I got the design from.
 	// This version is my modified version which uses the Intersection Observer Api.
-	// Because the area I am trying to measure the progress of scrolling through is larger than the viewport I have the rootMargin set to be 400% since the area I am trying to measure is 4 times the viewport height.
+	// Because the area I am trying to measure the progress of scrolling through is larger than the viewport I have the rootMargin set to be X00% since the area I am trying to measure is X times the viewport height.
 	const thresholdArr = [0.29, 0.49, 0.69, 0.89]
 	const [ref] = useIntersect({
 		threshold: thresholdArr,
@@ -107,6 +105,36 @@ export default function Home() {
 		},
 	})
 
+	const [sideNavClass, setSideNavClass] = useState(styles.sideNavStatic)
+
+	const [ref2] = useIntersect({
+		threshold: [0.95, 0.96, 0.97, 0.98, 0.99, 1],
+		func: (e) => {
+			if (e[0].intersectionRatio >= 0.98) {
+				console.log('Switch now')
+				setSideNavClass(styles.sideNav)
+			}
+		},
+	})
+
+	const [ref3] = useIntersect({
+		threshold: [0.1],
+		func: (e) => {
+			if (e[0].intersectionRatio >= 0.1) {
+				setSideNavClass(styles.sideNav)
+			}
+		},
+	})
+
+	const [refSideNavStatic] = useIntersect({
+		threshold: [0.02],
+		func: (e) => {
+			if (e[0].intersectionRatio >= 0.02) {
+				setSideNavClass(styles.sideNavStatic)
+			}
+		},
+	})
+
 	return (
 		<>
 			<Head>
@@ -124,7 +152,7 @@ export default function Home() {
 				</div>
 			</header>
 			<main className={styles.main}>
-				<div className={styles.firstSection}>
+				<div className={styles.section} ref={refSideNavStatic}>
 					<div className={styles.splitLeft}>
 						<div className={styles.firstText}>
 							<p>I am Antonio,</p>
@@ -152,17 +180,15 @@ export default function Home() {
 					</div>
 				</div>
 				<div id="projectList" ref={ref}>
-					{/* <div className={styles.navContainer}> */}
-					<nav id="side-nav" className={styles.sideNav}>
+					<nav id="side-nav" className={sideNavClass}>
 						<a href="#1" className={styles.activeSideNav}></a>
 						<a href="#2"></a>
 						<a href="#3"></a>
 						<a href="#4"></a>
 						<a href="#5"></a>
 					</nav>
-					{/* </div> */}
 					<Project
-						name="Autojack"
+						title="Autojack"
 						color="#e3ddf3"
 						position="1"
 						linkName="Get Jacked."
@@ -170,38 +196,56 @@ export default function Home() {
 						content="An awe-inspiring display of my radical skills. Autojack is designed to do play
 								Blackjack so the user doesn't have to. But they totally can. And that's the beauty
 								of it. Ask yourself, where would we be without Autojack?"
+						ref={ref2}
 					/>
 					<Project
-						name="Rhyming Word Generator"
+						title="Rhyming Word Generator"
 						color="#8db9d0"
 						position="2"
 						linkName="Generate Nonsense."
 						link="https://wordgenerator.netlify.app/"
 						content="My first project, an exploration of Javascript, turned into a deep dive on the structure 
 						of English words. This generator produces words unknown to man, and makes them mostly rhyme. Instant poetry."
+						ref={ref3}
 					/>
 					<Project
-						name="Shop Antonio"
+						title="Shop Antonio"
 						color="#B7B6CE"
 						position="3"
 						linkName="Browse my fake store."
-						content="E-commerce."
+						content="Feeling that I hadn't demonstrated enough practical real world examples, I set out to create an e-commerce site with all the features expected.."
 					/>
 					<Project
-						name="Random Test"
+						title="Random Test"
 						color="#c2dab8"
 						position="4"
 						linkName="Be Random."
 						content="Some words."
 					/>
 					<Project
-						name="First Portfolio"
+						title="First Portfolio"
 						color="#B7B6CE"
 						position="5"
 						linkName="Be Random."
 						content="Some words."
 					/>
 				</div>
+				<div className={styles.section}>
+					<div className={styles.collage}>{/* 7 Images */}</div>
+					<div>
+						<h3>Who I am</h3>
+						<h4>Antonio Zamora, front-end developer</h4>
+						<p>
+							I found my love for programming when I decided to take a closer look at code and found
+							that solving problems was fun.
+						</p>
+						<p>
+							I primarily focus on heavy use of Javascript using React, and more recently Next.js.
+						</p>
+						<p>I have experience taking web designs and turning them into reality.</p>
+					</div>
+				</div>
+				<div className={styles.contact}></div>
 			</main>
 		</>
 	)
