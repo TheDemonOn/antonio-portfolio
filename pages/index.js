@@ -44,6 +44,17 @@ export default function Home() {
 		}
 	}, [changingTextNum])
 
+	const [blue, setBlue] = useState()
+	const [yellow, setYellow] = useState()
+	const [purple, setPurple] = useState()
+	const [green, setGreen] = useState()
+	useEffect(() => {
+		setBlue(getComputedStyle(document.documentElement).getPropertyValue('--blue-color'))
+		setYellow(getComputedStyle(document.documentElement).getPropertyValue('--yellow-color'))
+		setPurple(getComputedStyle(document.documentElement).getPropertyValue('--purple-color'))
+		setGreen(getComputedStyle(document.documentElement).getPropertyValue('--green-color'))
+	}, [])
+
 	const [bgColor, setBgColor] = useState('#e3ddf3')
 	const [sideNavArr, setSideNavArr] = useState([0, 0, 0, 0, 0])
 
@@ -68,7 +79,7 @@ export default function Home() {
 	}, [sideNavArr])
 
 	useEffect(() => {
-		let bg = document.getElementById('projectList')
+		let bg = document.getElementById('project-list')
 		bg.setAttribute('style', `background-color: ${bgColor};`)
 	}, [bgColor])
 
@@ -91,15 +102,15 @@ export default function Home() {
 				updateSideNav(3)
 			} else if (ratio >= thresholdArr[1]) {
 				// Shop Antonio
-				setBgColor('#c2dab8')
+				setBgColor(green)
 				updateSideNav(2)
 			} else if (ratio >= thresholdArr[0]) {
 				// Rhyming Word Generator
-				setBgColor('#8DB9D0')
+				setBgColor(blue)
 				updateSideNav(1)
 			} else {
 				// Autojack
-				setBgColor('#e3ddf3')
+				setBgColor(purple)
 				updateSideNav(0)
 			}
 		},
@@ -168,10 +179,10 @@ export default function Home() {
 			</Head>
 			<header className={styles.header}>
 				<div>
-					<a href="#projectList">Projects</a>
+					<a href="#project-list">Projects</a>
 					<a>About</a>
 				</div>
-				<span>ANTONIO ZAMORA</span>
+				<span className={styles.antonio}>ANTONIO ZAMORA</span>
 				<div>
 					<a>Contact</a>
 					<a>GitHub</a>
@@ -205,7 +216,7 @@ export default function Home() {
 						Video here
 					</div>
 				</div>
-				<div id="projectList" ref={refColorChange}>
+				<div id="project-list" ref={refColorChange}>
 					<nav id="side-nav" className={sideNavClass}>
 						<a href="#1" className={styles.activeSideNav}></a>
 						<a href="#2"></a>
@@ -215,7 +226,6 @@ export default function Home() {
 					</nav>
 					<Project
 						title="Autojack"
-						color="#e3ddf3"
 						position="1"
 						linkName="Get Jacked."
 						link="https://autojack.netlify.app/"
@@ -226,7 +236,6 @@ export default function Home() {
 					/>
 					<Project
 						title="Rhyming Word Generator"
-						color="#8db9d0"
 						position="2"
 						linkName="Generate Nonsense."
 						link="https://wordgenerator.netlify.app/"
@@ -236,14 +245,12 @@ export default function Home() {
 					/>
 					<Project
 						title="Shop Antonio"
-						color="#B7B6CE"
 						position="3"
 						linkName="Browse my fake store."
-						content="Feeling that I hadn't demonstrated enough practical real world examples, I set out to create an e-commerce site with all the features you'd expect. Welcome to Shop Antonio."
+						content="Feeling that I hadn't demonstrated enough practical real-world examples, I set out to create an e-commerce site with all the features you'd expect. Welcome to Shop Antonio."
 					/>
 					<Project
 						title="Random Test"
-						color="#c2dab8"
 						position="4"
 						linkName="Be Random."
 						content="The project where I first learned how to use an API, react context, and chart.js for some visualization. It shows the difference between two methods of generating values, and their distribution of 0's or 1's in a row."
@@ -251,9 +258,8 @@ export default function Home() {
 					/>
 					<Project
 						title="First Portfolio"
-						color="#B7B6CE"
 						position="5"
-						linkName="A blast to the not so distant past."
+						linkName="A blast to the not-so-distant past."
 						content="The first version of my portfolio, a labor of love, and an interesting gimmick, but ultimately not the representation of myself I desired."
 					/>
 				</div>
@@ -294,7 +300,45 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className={styles.contact}></div>
+				<div className={styles.contact}>
+					<div className={styles.contactText}>
+						<h3>CONTACT</h3>
+						<h2>Get in touch</h2>
+					</div>
+					<div className={styles.links}>
+						<a>
+							<div
+								style={{
+									backgroundColor: blue,
+								}}
+							></div>
+							<p>linkedin</p>
+						</a>
+						<a>
+							<div
+								style={{
+									backgroundColor: yellow,
+								}}
+							></div>
+							<p>me@codeantonio.com</p>
+						</a>
+						<a>
+							<div
+								style={{
+									backgroundColor: purple,
+								}}
+							></div>
+							<p>937 782 9060</p>
+						</a>
+					</div>
+				</div>
+				<footer>
+					<span className={styles.antonioFooter}>ANTONIO ZAMORA</span>
+					<p className={styles.credits}>
+						Design by <span>Jess Simons.</span> Code by me.
+					</p>
+					<a className={styles.githubFooter}>GitHub</a>
+				</footer>
 			</main>
 		</>
 	)

@@ -1,3 +1,11 @@
+:root {
+	--main-bg: #fcf9f4;
+	--green-color: #bdd9b2;
+	--blue-color: #aaddf0;
+	--purple-color: #e3ddf3;
+	--yellow-color: #f8e4a1;
+}
+
 html,
 body {
 	padding: 0;
@@ -53,7 +61,7 @@ ul li {
 	background-color: #8db9d0;
 }
 
-#projectList {
+#project-list {
 	transition: all 0.5s;
 }
 
@@ -80,6 +88,13 @@ ul li {
 	border-radius: 50%;
 	shape-outside: circle();
 	clip-path: circle();
+}
+
+footer {
+	position: relative;
+	height: 5rem;
+	background-color: black;
+	color: white;
 }
 
 @media (max-width: 800px) {

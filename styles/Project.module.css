@@ -42,7 +42,7 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background-color: #fcf9f4;
+	background-color: var(--main-bg);
 	opacity: 0;
 	z-index: -1;
 	transform: scaleX(0%);
