@@ -130,15 +130,22 @@
 	font-size: 1.5rem;
 	position: absolute;
 	margin-inline: auto;
-	width: 16.5rem;
+	width: 16.6rem;
 	right: 0;
 	left: 0;
+	/* border: solid; */
 }
 
 .sideNavStatic {
 	position: absolute;
 	left: 0;
 	top: 128vh;
+}
+
+.sideNavStaticBottom {
+	position: absolute;
+	left: 0;
+	top: 531vh;
 }
 
 .sideNav {

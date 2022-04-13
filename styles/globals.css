@@ -80,3 +80,9 @@ ul li {
 	shape-outside: circle();
 	clip-path: circle();
 }
+
+@media (max-width: 800px) {
+	#side-nav {
+		display: none;
+	}
+}

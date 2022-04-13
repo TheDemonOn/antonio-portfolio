@@ -1,6 +1,5 @@
 .fullSection {
 	display: flex;
-	overflow: hidden;
 	min-height: 100vh;
 	flex-direction: row-reverse;
 }

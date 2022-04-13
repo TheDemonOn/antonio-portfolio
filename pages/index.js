@@ -76,7 +76,7 @@ export default function Home() {
 	// This version is my modified version which uses the Intersection Observer Api.
 	// Because the area I am trying to measure the progress of scrolling through is larger than the viewport I have the rootMargin set to be X00% since the area I am trying to measure is X times the viewport height.
 	const thresholdArr = [0.29, 0.49, 0.69, 0.89]
-	const [ref] = useIntersect({
+	const [refColorChange] = useIntersect({
 		threshold: thresholdArr,
 		rootMargin: '500% 0px 0px 0px',
 		func: (e) => {
@@ -107,21 +107,24 @@ export default function Home() {
 
 	const [sideNavClass, setSideNavClass] = useState(styles.sideNavStatic)
 
-	const [ref2] = useIntersect({
-		threshold: [0.95, 0.96, 0.97, 0.98, 0.99, 1],
+	const [refSideNavSticky] = useIntersect({
+		threshold: [0.98, 0.99, 1],
 		func: (e) => {
-			if (e[0].intersectionRatio >= 0.98) {
-				console.log('Switch now')
-				setSideNavClass(styles.sideNav)
+			if (sideNavClass !== styles.sideNav) {
+				if (e[0].intersectionRatio >= 0.98) {
+					setSideNavClass(styles.sideNav)
+				}
 			}
 		},
 	})
 
-	const [ref3] = useIntersect({
+	const [refMissedSticky] = useIntersect({
 		threshold: [0.1],
 		func: (e) => {
-			if (e[0].intersectionRatio >= 0.1) {
-				setSideNavClass(styles.sideNav)
+			if (sideNavClass !== styles.sideNav) {
+				if (e[0].intersectionRatio >= 0.1) {
+					setSideNavClass(styles.sideNav)
+				}
 			}
 		},
 	})
@@ -129,8 +132,31 @@ export default function Home() {
 	const [refSideNavStatic] = useIntersect({
 		threshold: [0.02],
 		func: (e) => {
-			if (e[0].intersectionRatio >= 0.02) {
-				setSideNavClass(styles.sideNavStatic)
+			if (sideNavClass !== styles.sideNavStatic) {
+				if (e[0].intersectionRatio >= 0.02) {
+					setSideNavClass(styles.sideNavStatic)
+				}
+			}
+		},
+	})
+
+	const [refEndSticky] = useIntersect({
+		threshold: [0.01],
+		rootMargin: '1.1%',
+		func: (e) => {
+			// console.log(e[0].intersectionRatio)
+			if (e[0].intersectionRatio > 0 && sideNavClass !== styles.sideNav) {
+				setSideNavClass(styles.sideNav)
+			}
+		},
+	})
+
+	const [refEndStatic] = useIntersect({
+		threshold: [0.01],
+		func: (e) => {
+			if (e[0].intersectionRatio > 0 && sideNavClass !== styles.sideNavStaticBottom) {
+				console.log('first')
+				setSideNavClass(styles.sideNavStaticBottom)
 			}
 		},
 	})
@@ -179,7 +205,7 @@ export default function Home() {
 						Video here
 					</div>
 				</div>
-				<div id="projectList" ref={ref}>
+				<div id="projectList" ref={refColorChange}>
 					<nav id="side-nav" className={sideNavClass}>
 						<a href="#1" className={styles.activeSideNav}></a>
 						<a href="#2"></a>
@@ -196,7 +222,7 @@ export default function Home() {
 						content="An awe-inspiring display of my radical skills. Autojack is designed to do play
 								Blackjack so the user doesn't have to. But they totally can. And that's the beauty
 								of it. Ask yourself, where would we be without Autojack?"
-						ref={ref2}
+						ref={refSideNavSticky}
 					/>
 					<Project
 						title="Rhyming Word Generator"
@@ -206,31 +232,32 @@ export default function Home() {
 						link="https://wordgenerator.netlify.app/"
 						content="My first project, an exploration of Javascript, turned into a deep dive on the structure 
 						of English words. This generator produces words unknown to man, and makes them mostly rhyme. Instant poetry."
-						ref={ref3}
+						ref={refMissedSticky}
 					/>
 					<Project
 						title="Shop Antonio"
 						color="#B7B6CE"
 						position="3"
 						linkName="Browse my fake store."
-						content="Feeling that I hadn't demonstrated enough practical real world examples, I set out to create an e-commerce site with all the features expected.."
+						content="Feeling that I hadn't demonstrated enough practical real world examples, I set out to create an e-commerce site with all the features you'd expect. Welcome to Shop Antonio."
 					/>
 					<Project
 						title="Random Test"
 						color="#c2dab8"
 						position="4"
 						linkName="Be Random."
-						content="Some words."
+						content="The project where I first learned how to use an API, react context, and chart.js for some visualization."
+						ref={refEndSticky}
 					/>
 					<Project
 						title="First Portfolio"
 						color="#B7B6CE"
 						position="5"
-						linkName="Be Random."
+						linkName="A blast to the not so distant past."
 						content="Some words."
 					/>
 				</div>
-				<div className={styles.section}>
+				<div className={styles.section} ref={refEndStatic}>
 					<div className={styles.collage}>{/* 7 Images */}</div>
 					<div>
 						<h3>Who I am</h3>
