@@ -95,7 +95,7 @@ export default function Home() {
 				updateSideNav(2)
 			} else if (ratio >= thresholdArr[0]) {
 				// Rhyming Word Generator
-				setBgColor('#8db9d0')
+				setBgColor('#8DB9D0')
 				updateSideNav(1)
 			} else {
 				// Autojack
@@ -261,7 +261,16 @@ export default function Home() {
 					<div className={styles.aboutMe}>
 						<div className={styles.collage}>
 							{/* 7 Images */}
-							Picsssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+							{/* Picsssssssssssssssssssssssssssssssssssssssssssssssssssssssss */}
+							<div className={styles.illustration}>illustration</div>
+							<div className={styles.photo}>photo</div>
+							<div className={styles.me}>me</div>
+							<div className={styles.signs}>
+								<div className={styles.sign1}>sign 1</div>
+								<div className={styles.sign2}>sign 2</div>
+								<div className={styles.sign3}>sign 3</div>
+								<div className={styles.sign4}>sign 4</div>
+							</div>
 						</div>
 						<div className={styles.aboutText}>
 							<h3>Who I am</h3>

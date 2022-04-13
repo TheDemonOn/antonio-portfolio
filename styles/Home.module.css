@@ -162,7 +162,7 @@
 	/* border: solid; */
 	display: flex;
 	position: absolute;
-	width: min(85%);
+	width: min(83%);
 	margin-top: 7rem;
 	margin-inline: auto;
 	left: 0;
@@ -189,11 +189,71 @@
 }
 
 .collage {
+	width: 51rem;
+	height: 34rem;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .aboutText {
-	/* border: solid; */
 	margin-left: 6rem;
+}
+
+.illustration {
+	border: solid;
+	border-width: 2px;
+	width: 10.5rem;
+	height: 13.5rem;
+	background-color: #f8e4a1;
+}
+
+.photo {
+	border: solid;
+	border-width: 2px;
+	width: 18rem;
+	height: 22rem;
+	background-color: #c2dab8;
+	z-index: 1;
+}
+
+.me {
+	border: solid;
+	border-width: 2px;
+	width: 18.6rem;
+	height: 17.8rem;
+	position: absolute;
+	bottom: 0;
+	z-index: 0;
+}
+
+.signs {
+	position: absolute;
+	height: 9.4rem;
+	width: 9.5rem;
+	right: 0;
+	bottom: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 1.5rem;
+	row-gap: 1.4rem;
+}
+.signs div {
+	border: solid;
+	border-width: 2px;
+}
+.sign1 {
+	background-color: #f8e4a1;
+}
+.sign2 {
+	background-color: #c2dab8;
+}
+.sign3 {
+	background-color: #e3ddf3;
+}
+.sign4 {
+	background-color: #afdeef;
 }
 
 @media (max-width: 800px) {
