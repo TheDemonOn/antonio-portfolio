@@ -246,7 +246,7 @@ export default function Home() {
 						color="#c2dab8"
 						position="4"
 						linkName="Be Random."
-						content="The project where I first learned how to use an API, react context, and chart.js for some visualization."
+						content="The project where I first learned how to use an API, react context, and chart.js for some visualization. It shows the difference between two methods of generating values, and their distribution of 0's or 1's in a row."
 						ref={refEndSticky}
 					/>
 					<Project
@@ -254,22 +254,35 @@ export default function Home() {
 						color="#B7B6CE"
 						position="5"
 						linkName="A blast to the not so distant past."
-						content="Some words."
+						content="The first version of my portfolio, a labor of love, and an interesting gimmick, but ultimately not the representation of myself I desired."
 					/>
 				</div>
 				<div className={styles.section} ref={refEndStatic}>
-					<div className={styles.collage}>{/* 7 Images */}</div>
-					<div>
-						<h3>Who I am</h3>
-						<h4>Antonio Zamora, front-end developer</h4>
-						<p>
-							I found my love for programming when I decided to take a closer look at code and found
-							that solving problems was fun.
-						</p>
-						<p>
-							I primarily focus on heavy use of Javascript using React, and more recently Next.js.
-						</p>
-						<p>I have experience taking web designs and turning them into reality.</p>
+					<div className={styles.aboutMe}>
+						<div className={styles.collage}>
+							{/* 7 Images */}
+							Picsssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+						</div>
+						<div className={styles.aboutText}>
+							<h3>Who I am</h3>
+							<h4>Antonio Zamora, front-end developer.</h4>
+							<p>
+								I found my love for programming when I decided to take a closer look at code and
+								found that solving problems was fun.
+							</p>
+							<p>
+								I primarily focus on heavy use of Javascript using React, and more recently Next.js.
+							</p>
+							<p>I have experience taking web designs and turning them into reality.</p>
+							<h4>Some Text, those are words.</h4>
+							<p>
+								I enjoy playing Dungeons and Dragons every Monday. I also love cats, cooking, and
+								video games.
+							</p>
+							<p>
+								I was born and raised in the Bay Area, CA. I currently reside near Bloomington, IN.
+							</p>
+						</div>
 					</div>
 				</div>
 				<div className={styles.contact}></div>

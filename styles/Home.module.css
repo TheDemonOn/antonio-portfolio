@@ -138,24 +138,62 @@
 
 .sideNavStatic {
 	position: absolute;
-	left: 0;
+	left: 1rem;
 	top: 128vh;
 }
 
 .sideNavStaticBottom {
 	position: absolute;
-	left: 0;
+	left: 1rem;
 	top: 531vh;
 }
 
 .sideNav {
 	position: fixed;
-	left: 0;
+	left: 1rem;
 	top: 30vh;
 }
 
 .activeSideNav {
 	background-color: #030303;
+}
+
+.aboutMe {
+	/* border: solid; */
+	display: flex;
+	position: absolute;
+	width: min(85%);
+	margin-top: 7rem;
+	margin-inline: auto;
+	left: 0;
+	right: 0;
+}
+
+.aboutMe * {
+	font-family: aktiv-grotesk, sans-serif;
+	font-weight: lighter;
+}
+.aboutMe h3 {
+	font-size: 2.8rem;
+}
+.aboutMe h4 {
+	font-size: 2rem;
+	margin-top: 2.5rem;
+	margin-bottom: 1.2rem;
+}
+.aboutMe p {
+	display: block;
+	font-size: 1.3rem;
+	line-height: 2rem;
+	margin: 0.5rem 0.2rem 0;
+}
+
+.collage {
+}
+
+.aboutText {
+	/* border: solid; */
+	margin-left: 6rem;
 }
 
 @media (max-width: 800px) {
