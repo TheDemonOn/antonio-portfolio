@@ -75,5 +75,8 @@ ul li {
 	border-width: 2px;
 	width: 15px;
 	height: 15px;
-	border-radius: 100%;
+
+	border-radius: 50%;
+	shape-outside: circle();
+	clip-path: circle();
 }
