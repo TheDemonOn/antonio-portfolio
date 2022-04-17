@@ -55,6 +55,11 @@
 	overflow: hidden;
 }
 
+.section2 {
+	min-height: 100vh;
+	overflow: hidden;
+}
+
 .splitLeft {
 	width: 50%;
 	display: flex;
@@ -158,8 +163,6 @@
 }
 
 .aboutMe {
-	/* border: solid; */
-	display: flex;
 	position: absolute;
 	width: min(83%);
 	margin-top: 7rem;
@@ -188,12 +191,10 @@
 }
 
 .collage {
-	width: 51rem;
-	height: 34rem;
+	/* border: solid; */
+	width: 30.6rem;
+	height: 33.8rem;
 	position: relative;
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
 }
 
 .aboutText {
@@ -213,6 +214,9 @@
 	border-width: 2px;
 	width: 18rem;
 	height: 22rem;
+	position: absolute;
+	top: 0;
+	right: 0;
 	background-color: var(--green-color);
 	z-index: 1;
 }
@@ -415,5 +419,30 @@
 	}
 	.sideNav {
 		display: none;
+	}
+
+	.aboutMe {
+		all: unset;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.aboutText {
+		all: unset;
+	}
+
+	.collage {
+		/* border: solid; */
+		width: 30.6rem;
+		height: 33.8rem;
+		position: relative;
+	}
+	.illustration {
+	}
+	.photo {
+	}
+	.me {
+	}
+	.signs {
 	}
 }

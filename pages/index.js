@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect } from 'react'
+import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 
 import Head from 'next/head'
 // import Image from 'next/image'
@@ -166,11 +166,69 @@ export default function Home() {
 		threshold: [0.01],
 		func: (e) => {
 			if (e[0].intersectionRatio > 0 && sideNavClass !== styles.sideNavStaticBottom) {
-				console.log('first')
 				setSideNavClass(styles.sideNavStaticBottom)
 			}
 		},
 	})
+
+	const useScale = (wrapper, content) => {
+		content.style.transform = 'scale(1)'
+		let { width: cw, height: ch } = content.getBoundingClientRect()
+		let { width: wrw, height: wrh } = wrapper.getBoundingClientRect()
+		let scale = Math.min(wrw / cw, wrh / ch)
+		console.log(scale)
+		if (scale > 1) {
+			scale = 1
+		}
+		if (scale <= 0.82) {
+			console.log('thicker')
+			let nodes = document.getElementById('collage').childNodes
+			for (let i = 0; i < nodes.length; i++) {
+				if (nodes[i].nodeName.toLowerCase() == 'div') {
+					nodes[i].style.borderWidth = '3px'
+				}
+			}
+			let nodes2 = document.getElementById('signs').childNodes
+			for (let i = 0; i < nodes2.length; i++) {
+				if (nodes2[i].nodeName.toLowerCase() == 'div') {
+					nodes2[i].style.borderWidth = '3px'
+				}
+			}
+		} else {
+			console.log('less thic')
+			let nodes = document.getElementById('collage').childNodes
+			for (let i = 0; i < nodes.length; i++) {
+				if (nodes[i].nodeName.toLowerCase() == 'div') {
+					nodes[i].style.borderWidth = '2px'
+				}
+			}
+			let nodes2 = document.getElementById('signs').childNodes
+			for (let i = 0; i < nodes2.length; i++) {
+				if (nodes2[i].nodeName.toLowerCase() == 'div') {
+					nodes2[i].style.borderWidth = '2px'
+				}
+			}
+		}
+
+		content.style.transform = `scale(${scale - 0.08})`
+	}
+
+	const [screenWidth, setScreenWidth] = useState()
+	useEffect(() => {
+		const widthChange = () => {
+			setScreenWidth(window.innerWidth)
+		}
+		window.addEventListener('resize', widthChange)
+	}, [])
+
+	const wrapper = useRef()
+	const content = useRef()
+
+	useEffect(() => {
+		if (wrapper.current && content.current) {
+			useScale(wrapper.current, content.current)
+		}
+	}, [wrapper.current, content.current, screenWidth])
 
 	return (
 		<>
@@ -263,15 +321,15 @@ export default function Home() {
 						content="The first version of my portfolio, a labor of love, and an interesting gimmick, but ultimately not the representation of myself I desired."
 					/>
 				</div>
-				<div className={styles.section} ref={refEndStatic}>
-					<div className={styles.aboutMe}>
-						<div className={styles.collage}>
+				<div className={styles.section2} ref={refEndStatic}>
+					<div className={styles.aboutMe} ref={wrapper}>
+						<div className={styles.collage} ref={content} id="collage">
 							{/* 7 Images */}
 							{/* Picsssssssssssssssssssssssssssssssssssssssssssssssssssssssss */}
 							<div className={styles.illustration}>illustration</div>
 							<div className={styles.photo}>photo</div>
 							<div className={styles.me}>me</div>
-							<div className={styles.signs}>
+							<div className={styles.signs} id="signs">
 								<div className={styles.sign1}>sign 1</div>
 								<div className={styles.sign2}>sign 2</div>
 								<div className={styles.sign3}>sign 3</div>
