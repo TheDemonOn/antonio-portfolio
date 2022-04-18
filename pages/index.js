@@ -123,7 +123,9 @@ export default function Home() {
 		func: (e) => {
 			if (sideNavClass !== styles.sideNav) {
 				if (e[0].intersectionRatio >= 0.98) {
-					setSideNavClass(styles.sideNav)
+					if (window.innerWidth > 800) {
+						setSideNavClass(styles.sideNav)
+					}
 				}
 			}
 		},
@@ -134,7 +136,9 @@ export default function Home() {
 		func: (e) => {
 			if (sideNavClass !== styles.sideNav) {
 				if (e[0].intersectionRatio >= 0.1) {
-					setSideNavClass(styles.sideNav)
+					if (window.innerWidth > 800) {
+						setSideNavClass(styles.sideNav)
+					}
 				}
 			}
 		},
@@ -155,9 +159,10 @@ export default function Home() {
 		threshold: [0.01],
 		rootMargin: '1.1%',
 		func: (e) => {
-			// console.log(e[0].intersectionRatio)
 			if (e[0].intersectionRatio > 0 && sideNavClass !== styles.sideNav) {
-				setSideNavClass(styles.sideNav)
+				if (window.innerWidth > 800) {
+					setSideNavClass(styles.sideNav)
+				}
 			}
 		},
 	})

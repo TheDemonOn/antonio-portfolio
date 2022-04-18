@@ -98,9 +98,12 @@
 
 @media (max-width: 800px) {
 	.fullSection {
+		all: unset;
 		display: flex;
 		overflow: unset;
-		min-height: 100vh;
+		height: 100vh;
+		/* border: solid; */
+		max-height: 45rem;
 		flex-direction: column;
 	}
 	.left {
