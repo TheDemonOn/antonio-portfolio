@@ -94,7 +94,7 @@ export default function Home() {
 			let ratio = e[0].intersectionRatio
 			if (ratio > thresholdArr[3]) {
 				// First portfolio
-				setBgColor('#A4BFCB')
+				setBgColor('#FADBF6')
 				updateSideNav(4)
 			} else if (ratio >= thresholdArr[2]) {
 				// Random Test
@@ -171,46 +171,41 @@ export default function Home() {
 		},
 	})
 
+	// This function takes in two elements, a parent and a child, and sets the scale of the child dynamically relative to the parent.
 	const useScale = (wrapper, content) => {
 		content.style.transform = 'scale(1)'
 		let { width: cw, height: ch } = content.getBoundingClientRect()
 		let { width: wrw, height: wrh } = wrapper.getBoundingClientRect()
 		let scale = Math.min(wrw / cw, wrh / ch)
-		console.log(scale)
-		if (scale > 1) {
-			scale = 1
-		}
+
+		// This sets the border thickness to become thicker when the collage scales down to keep the thickness apearing the same size.
+		let collage = document.getElementById('collage').childNodes
+		let signs = document.getElementById('signs').childNodes
 		if (scale <= 0.82) {
-			console.log('thicker')
-			let nodes = document.getElementById('collage').childNodes
-			for (let i = 0; i < nodes.length; i++) {
-				if (nodes[i].nodeName.toLowerCase() == 'div') {
-					nodes[i].style.borderWidth = '3px'
+			for (let i = 0; i < Math.max(collage.length, signs.length); i++) {
+				if (collage[i].nodeName == 'DIV') {
+					collage[i].style.borderWidth = '3px'
 				}
-			}
-			let nodes2 = document.getElementById('signs').childNodes
-			for (let i = 0; i < nodes2.length; i++) {
-				if (nodes2[i].nodeName.toLowerCase() == 'div') {
-					nodes2[i].style.borderWidth = '3px'
+				if (signs[i].nodeName == 'DIV') {
+					signs[i].style.borderWidth = '3px'
 				}
 			}
 		} else {
-			console.log('less thic')
-			let nodes = document.getElementById('collage').childNodes
-			for (let i = 0; i < nodes.length; i++) {
-				if (nodes[i].nodeName.toLowerCase() == 'div') {
-					nodes[i].style.borderWidth = '2px'
+			for (let i = 0; i < Math.max(collage.length, signs.length); i++) {
+				if (collage[i].nodeName == 'DIV') {
+					collage[i].style.borderWidth = '2px'
 				}
-			}
-			let nodes2 = document.getElementById('signs').childNodes
-			for (let i = 0; i < nodes2.length; i++) {
-				if (nodes2[i].nodeName.toLowerCase() == 'div') {
-					nodes2[i].style.borderWidth = '2px'
+				if (signs[i].nodeName == 'DIV') {
+					signs[i].style.borderWidth = '2px'
 				}
 			}
 		}
-
-		content.style.transform = `scale(${scale - 0.08})`
+		// This actually scales the collage
+		if (scale - 0.08 < 1 && scale !== 1) {
+			content.style.transform = `scale(${scale - 0.08})`
+		} else {
+			content.style.transform = `scale(${1})`
+		}
 	}
 
 	const [screenWidth, setScreenWidth] = useState()
@@ -223,7 +218,7 @@ export default function Home() {
 
 	const wrapper = useRef()
 	const content = useRef()
-
+	// This useEffect will trigger the scaling function when the screen size changes and onload.
 	useEffect(() => {
 		if (wrapper.current && content.current) {
 			useScale(wrapper.current, content.current)
@@ -349,11 +344,11 @@ export default function Home() {
 							<p>I have experience taking web designs and turning them into reality.</p>
 							<h4>Some Text, those are words.</h4>
 							<p>
-								I enjoy playing Dungeons and Dragons every Monday. I also love cats, cooking, and
-								video games.
+								I was born and raised in the Bay Area, CA. I currently reside near Bloomington, IN.
 							</p>
 							<p>
-								I was born and raised in the Bay Area, CA. I currently reside near Bloomington, IN.
+								I enjoy playing Dungeons and Dragons every Monday. I also love cats, cooking, and
+								video games.
 							</p>
 						</div>
 					</div>

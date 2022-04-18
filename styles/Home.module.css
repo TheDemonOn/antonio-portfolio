@@ -198,7 +198,12 @@
 }
 
 .aboutText {
-	margin-left: 6rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+	/* border: solid; */
+	margin-left: 35rem;
+	/* width: 45vw; */
 }
 
 .illustration {
@@ -429,6 +434,14 @@
 	}
 	.aboutText {
 		all: unset;
+		position: relative;
+		width: min(100% - 15%);
+		margin-inline: auto;
+		margin-bottom: 4rem;
+	}
+
+	.aboutText p {
+		font-size: 1.2rem;
 	}
 
 	.collage {

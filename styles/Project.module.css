@@ -112,15 +112,11 @@
 		margin-top: 2rem;
 	}
 	.right {
-		/* width: 50%;
-		display: flex;
-		flex-direction: column;
-		justify-content: center; */
 		all: unset;
 		position: relative;
 		width: min(100% - 15%);
 		margin-inline: auto;
-		margin-top: 10rem;
+		margin-top: 5rem;
 	}
 	.pictureFrame {
 		/* width: 42vw;
