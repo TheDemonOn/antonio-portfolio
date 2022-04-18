@@ -56,7 +56,7 @@
 }
 
 .section2 {
-	min-height: 100vh;
+	position: relative;
 	overflow: hidden;
 }
 
@@ -163,12 +163,11 @@
 }
 
 .aboutMe {
-	position: absolute;
+	position: relative;
 	width: min(83%);
 	margin-top: 7rem;
 	margin-inline: auto;
-	left: 0;
-	right: 0;
+	/* margin-bottom: 6rem; */
 }
 
 .aboutMe * {
@@ -190,20 +189,19 @@
 	margin: 0.5rem 0.2rem 0;
 }
 
+.aboutText {
+	display: none;
+}
+
 .collage {
 	/* border: solid; */
 	width: 30.6rem;
 	height: 33.8rem;
 	position: relative;
-}
-
-.aboutText {
-	position: absolute;
-	top: 0;
-	right: 0;
-	/* border: solid; */
-	margin-left: 35rem;
-	/* width: 45vw; */
+	float: left;
+	shape-outside: polygon(0px 0px, -6.9% 98.28%, 95% 98.67%, 95% -0.49%);
+	margin-right: 5rem;
+	margin-bottom: 1rem;
 }
 
 .illustration {
@@ -267,19 +265,29 @@
 .contact {
 	position: relative;
 	display: flex;
-	min-height: 100vh;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	height: 100vh;
+	max-height: 50rem;
 	overflow: hidden;
 	background-color: var(--green-color);
+	margin-top: 5rem;
+}
+.contactContent {
+	/* border: solid; */
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	/* min-height: 30vh; */
+	/* max-height: 30vh; */
 }
 
 .contactText {
-	position: absolute;
+	position: relative;
 	text-align: center;
-	top: 13rem;
-	left: 0;
-	right: 0;
-	margin-inline: auto;
 	font-weight: lighter;
+	margin-bottom: 5rem;
 }
 .contactText h3 {
 	font-family: aktiv-grotesk-extended, sans-serif;
@@ -295,11 +303,7 @@
 	display: flex;
 	width: 62vw;
 	justify-content: space-between;
-	position: absolute;
-	left: 0;
-	right: 0;
-	bottom: 16rem;
-	margin-inline: auto;
+	position: relative;
 }
 .links div {
 	border: solid;
@@ -359,6 +363,54 @@
 	text-decoration: underline;
 	text-underline-offset: 0.5rem;
 	text-decoration-thickness: 1.2px;
+}
+
+@media (max-width: 942px) {
+	.aboutMe {
+		position: relative;
+		width: min(90%);
+		margin-top: 5vh;
+		margin-inline: auto;
+		/* all: unset; */
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		/* margin-top: 5vw; */
+		margin-bottom: unset;
+	}
+	.aboutMe > h3 {
+		display: none;
+	}
+	.aboutMe > h4 {
+		display: none;
+	}
+	.aboutMe > p {
+		display: none;
+	}
+
+	.aboutText {
+		all: unset;
+		position: relative;
+		margin-top: 5vw;
+		margin-bottom: 2rem;
+		background-color: #f0ece5;
+		padding: 1rem;
+	}
+	.aboutText p {
+		font-size: 1.2rem;
+	}
+
+	.collage {
+		/* border: solid; */
+		width: 30.6rem;
+		height: 33.8rem;
+		position: relative;
+		float: unset;
+		shape-outside: unset;
+		margin: unset;
+		margin-right: unset;
+		margin-bottom: unset;
+	}
 }
 
 @media (max-width: 800px) {
@@ -426,30 +478,6 @@
 		display: none;
 	}
 
-	.aboutMe {
-		all: unset;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.aboutText {
-		all: unset;
-		position: relative;
-		width: min(100% - 15%);
-		margin-inline: auto;
-		margin-bottom: 4rem;
-	}
-
-	.aboutText p {
-		font-size: 1.2rem;
-	}
-
-	.collage {
-		/* border: solid; */
-		width: 30.6rem;
-		height: 33.8rem;
-		position: relative;
-	}
 	.illustration {
 	}
 	.photo {

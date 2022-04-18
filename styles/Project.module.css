@@ -101,8 +101,7 @@
 		all: unset;
 		display: flex;
 		overflow: unset;
-		height: 100vh;
-		/* border: solid; */
+		min-height: 100vh;
 		max-height: 45rem;
 		flex-direction: column;
 	}
@@ -113,13 +112,14 @@
 		margin-inline: auto;
 		/* border: solid; */
 		margin-top: 2rem;
+		margin-bottom: 2rem;
 	}
 	.right {
 		all: unset;
 		position: relative;
 		width: min(100% - 15%);
 		margin-inline: auto;
-		margin-top: 5rem;
+		margin-top: 15vh;
 	}
 	.pictureFrame {
 		/* width: 42vw;
@@ -144,8 +144,7 @@
 	}
 	.link {
 		all: unset;
-		position: absolute;
-		margin-top: 1rem;
+		position: relative;
 		font-size: 1.15rem;
 		text-decoration: underline;
 		text-underline-offset: 0.4rem;
@@ -157,9 +156,11 @@
 	}
 
 	.description {
+		position: relative;
 		margin-top: 1rem;
 		font-size: 1rem;
 		line-height: 1.7rem;
+		margin-bottom: 1rem;
 	}
 	.altText {
 		font-family: aktiv-grotesk-extended, sans-serif;

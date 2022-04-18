@@ -178,38 +178,53 @@ export default function Home() {
 
 	// This function takes in two elements, a parent and a child, and sets the scale of the child dynamically relative to the parent.
 	const useScale = (wrapper, content) => {
-		content.style.transform = 'scale(1)'
-		let { width: cw, height: ch } = content.getBoundingClientRect()
-		let { width: wrw, height: wrh } = wrapper.getBoundingClientRect()
-		let scale = Math.min(wrw / cw, wrh / ch)
+		if (window.innerWidth <= 800) {
+			content.style.transform = 'scale(1)'
+			let { width: cw, height: ch } = content.getBoundingClientRect()
+			let { width: wrw, height: wrh } = wrapper.getBoundingClientRect()
+			let scale = Math.min(wrw / cw, wrh / ch)
 
-		// This sets the border thickness to become thicker when the collage scales down to keep the thickness apearing the same size.
-		let collage = document.getElementById('collage').childNodes
-		let signs = document.getElementById('signs').childNodes
-		if (scale <= 0.82) {
-			for (let i = 0; i < Math.max(collage.length, signs.length); i++) {
-				if (collage[i].nodeName == 'DIV') {
-					collage[i].style.borderWidth = '3px'
+			// This sets the border thickness to become thicker when the collage scales down to keep the thickness apearing the same size.
+			let collage = document.getElementById('collage').childNodes
+			let signs = document.getElementById('signs').childNodes
+			if (scale <= 0.82) {
+				for (let i = 0; i < Math.max(collage.length, signs.length); i++) {
+					if (collage[i].nodeName == 'DIV') {
+						collage[i].style.borderWidth = '3px'
+					}
+					if (signs[i].nodeName == 'DIV') {
+						signs[i].style.borderWidth = '3px'
+					}
 				}
-				if (signs[i].nodeName == 'DIV') {
-					signs[i].style.borderWidth = '3px'
+			} else {
+				for (let i = 0; i < Math.max(collage.length, signs.length); i++) {
+					if (collage[i].nodeName == 'DIV') {
+						collage[i].style.borderWidth = '2px'
+					}
+					if (signs[i].nodeName == 'DIV') {
+						signs[i].style.borderWidth = '2px'
+					}
 				}
 			}
-		} else {
-			for (let i = 0; i < Math.max(collage.length, signs.length); i++) {
-				if (collage[i].nodeName == 'DIV') {
-					collage[i].style.borderWidth = '2px'
-				}
-				if (signs[i].nodeName == 'DIV') {
-					signs[i].style.borderWidth = '2px'
-				}
+			// This actually scales the collage
+			if (scale - 0.08 < 1 && scale !== 1) {
+				content.style.transform = `scale(${scale - 0.08})`
+			} else {
+				content.style.transform = `scale(${1})`
 			}
-		}
-		// This actually scales the collage
-		if (scale - 0.08 < 1 && scale !== 1) {
-			content.style.transform = `scale(${scale - 0.08})`
 		} else {
-			content.style.transform = `scale(${1})`
+			// let { width: cw, height: ch } = content.getBoundingClientRect()
+			// let { width: wrw, height: wrh } = wrapper.getBoundingClientRect()
+			// let scale = Math.min(wrw / cw, wrh / ch)
+			// let ratio = wrw / cw
+			// console.log(ratio)
+			// if (ratio < 2.45) {
+			// 	let num = ratio / 2.45
+			// 	console.log('This num: ' + num)
+			// 	content.style.transform = `scale(${num})`
+			// 	let text = document.getElementById('about-text')
+			// 	text.style.marginLeft = `${31 * num}rem`
+			// }
 		}
 	}
 
@@ -324,8 +339,6 @@ export default function Home() {
 				<div className={styles.section2} ref={refEndStatic}>
 					<div className={styles.aboutMe} ref={wrapper}>
 						<div className={styles.collage} ref={content} id="collage">
-							{/* 7 Images */}
-							{/* Picsssssssssssssssssssssssssssssssssssssssssssssssssssssssss */}
 							<div className={styles.illustration}>illustration</div>
 							<div className={styles.photo}>photo</div>
 							<div className={styles.me}>me</div>
@@ -336,7 +349,26 @@ export default function Home() {
 								<div className={styles.sign4}>sign 4</div>
 							</div>
 						</div>
-						<div className={styles.aboutText}>
+						{/* <div className={styles.aboutText} id="about-text"> */}
+						<h3>Who I am</h3>
+						<h4>Antonio Zamora, front-end developer.</h4>
+						<p>
+							I found my love for programming when I decided to take a closer look at code and found
+							that solving problems was fun.
+						</p>
+						<p>
+							I primarily focus on heavy use of Javascript using React, and more recently Next.js.
+						</p>
+						<p>I have experience taking web designs and turning them into reality.</p>
+
+						<h4>Some Text, those are words.</h4>
+						<p>
+							I was born and raised in the Bay Area, CA. I currently reside near Bloomington, IN. I
+							enjoy playing Dungeons and Dragons every Monday. I also love cats, cooking, and video
+							games.
+						</p>
+						{/* </div> */}
+						<div className={styles.aboutText} id="about-text">
 							<h3>Who I am</h3>
 							<h4>Antonio Zamora, front-end developer.</h4>
 							<p>
@@ -359,35 +391,37 @@ export default function Home() {
 					</div>
 				</div>
 				<div className={styles.contact}>
-					<div className={styles.contactText}>
-						<h3>CONTACT</h3>
-						<h2>Get in touch</h2>
-					</div>
-					<div className={styles.links}>
-						<a>
-							<div
-								style={{
-									backgroundColor: blue,
-								}}
-							></div>
-							<p>linkedin</p>
-						</a>
-						<a>
-							<div
-								style={{
-									backgroundColor: yellow,
-								}}
-							></div>
-							<p>me@codeantonio.com</p>
-						</a>
-						<a>
-							<div
-								style={{
-									backgroundColor: purple,
-								}}
-							></div>
-							<p>937 782 9060</p>
-						</a>
+					<div className={styles.contactContent}>
+						<div className={styles.contactText}>
+							<h3>CONTACT</h3>
+							<h2>Get in touch</h2>
+						</div>
+						<div className={styles.links}>
+							<a>
+								<div
+									style={{
+										backgroundColor: blue,
+									}}
+								></div>
+								<p>linkedin</p>
+							</a>
+							<a>
+								<div
+									style={{
+										backgroundColor: yellow,
+									}}
+								></div>
+								<p>me@codeantonio.com</p>
+							</a>
+							<a>
+								<div
+									style={{
+										backgroundColor: purple,
+									}}
+								></div>
+								<p>937 782 9060</p>
+							</a>
+						</div>
 					</div>
 				</div>
 				<footer>
