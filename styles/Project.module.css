@@ -97,7 +97,7 @@
 	line-height: 2rem;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 950px) {
 	.fullSection {
 		all: unset;
 		display: flex;
@@ -109,7 +109,7 @@
 	.left {
 		all: unset;
 		position: relative;
-		width: min(100% - 15%);
+		width: min(100% - 20%);
 		margin-inline: auto;
 		/* border: solid; */
 		margin-top: 2rem;
@@ -118,7 +118,7 @@
 	.right {
 		all: unset;
 		position: relative;
-		width: min(100% - 15%);
+		width: min(100% - 20%);
 		margin-inline: auto;
 		margin-top: 15vh;
 	}
