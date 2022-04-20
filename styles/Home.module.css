@@ -411,6 +411,76 @@
 		margin-right: unset;
 		margin-bottom: unset;
 	}
+	.antonioFooter {
+		display: none;
+	}
+	.githubFooter {
+		display: none;
+	}
+}
+
+@media (max-width: 900px) {
+	.contact {
+		all: unset;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		min-height: fit-content;
+		background-color: var(--green-color);
+	}
+	.contactText {
+		all: unset;
+		position: relative;
+		text-align: center;
+		/* top: 4rem; */
+		margin-top: 4rem;
+		left: 0;
+		right: 0;
+		margin-inline: auto;
+		font-weight: lighter;
+	}
+	.contactText h2 {
+		font-family: aktiv-grotesk, sans-serif;
+		font-size: 2.5rem;
+		margin-top: 1rem;
+	}
+	.links {
+		all: unset;
+
+		/* border: solid; */
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		position: relative;
+		height: 28rem;
+		margin-top: 2rem;
+		margin-bottom: 4rem;
+	}
+	.links div {
+		border: solid;
+		border-width: 2px;
+		width: 4rem;
+		height: 4rem;
+		border-radius: 50%;
+
+		shape-outside: circle();
+		clip-path: circle();
+	}
+	.links a {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		width: 10rem;
+		text-decoration: underline;
+		text-underline-offset: 0.6rem;
+		text-decoration-thickness: 1.5px;
+	}
+	.links p {
+		font-family: aktiv-grotesk, sans-serif;
+		font-size: 1.3rem;
+		margin-top: 1rem;
+	}
 }
 
 @media (max-width: 800px) {
@@ -475,83 +545,6 @@
 		left: 0;
 	}
 	.sideNav {
-		display: none;
-	}
-
-	.illustration {
-	}
-	.photo {
-	}
-	.me {
-	}
-	.signs {
-	}
-	.contact {
-		all: unset;
-		position: relative;
-		display: flex;
-		flex-direction: column;
-		min-height: fit-content;
-		background-color: var(--green-color);
-	}
-	.contactText {
-		all: unset;
-		position: relative;
-		text-align: center;
-		/* top: 4rem; */
-		margin-top: 4rem;
-		left: 0;
-		right: 0;
-		margin-inline: auto;
-		font-weight: lighter;
-	}
-	.contactText h2 {
-		font-family: aktiv-grotesk, sans-serif;
-		font-size: 2.5rem;
-		margin-top: 1rem;
-	}
-
-	.links {
-		all: unset;
-
-		/* border: solid; */
-		display: flex;
-		flex-direction: column;
-		justify-content: space-between;
-		align-items: center;
-		position: relative;
-		height: 28rem;
-		margin-top: 2rem;
-		margin-bottom: 4rem;
-	}
-	.links div {
-		border: solid;
-		border-width: 2px;
-		width: 4rem;
-		height: 4rem;
-		border-radius: 50%;
-
-		shape-outside: circle();
-		clip-path: circle();
-	}
-	.links a {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		width: 10rem;
-		text-decoration: underline;
-		text-underline-offset: 0.6rem;
-		text-decoration-thickness: 1.5px;
-	}
-	.links p {
-		font-family: aktiv-grotesk, sans-serif;
-		font-size: 1.3rem;
-		margin-top: 1rem;
-	}
-	.antonioFooter {
-		display: none;
-	}
-	.githubFooter {
 		display: none;
 	}
 }
