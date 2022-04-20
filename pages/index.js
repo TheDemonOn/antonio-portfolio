@@ -253,12 +253,12 @@ export default function Home() {
 			<header className={styles.header}>
 				<div>
 					<a href="#project-list">Projects</a>
-					<a>About</a>
+					<a href="#about-me">About</a>
 				</div>
 				<span className={styles.antonio}>ANTONIO ZAMORA</span>
 				<div>
-					<a>Contact</a>
-					<a>GitHub</a>
+					<a href="#contact">Contact</a>
+					<a href="https://github.com/TheDemonOn">GitHub</a>
 				</div>
 			</header>
 			<main className={styles.main}>
@@ -336,7 +336,7 @@ export default function Home() {
 						content="The first version of my portfolio, a labor of love, and an interesting gimmick, but ultimately not the representation of myself I desired."
 					/>
 				</div>
-				<div className={styles.section2} ref={refEndStatic}>
+				<div className={styles.section2} ref={refEndStatic} id="about-me">
 					<div className={styles.aboutMe} ref={wrapper}>
 						<div className={styles.collage} ref={content} id="collage">
 							<div className={styles.illustration}>illustration</div>
@@ -390,7 +390,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
-				<div className={styles.contact}>
+				<div className={styles.contact} id="contact">
 					<div className={styles.contactContent}>
 						<div className={styles.contactText}>
 							<h3>CONTACT</h3>
@@ -429,7 +429,9 @@ export default function Home() {
 					<p className={styles.credits}>
 						Design by <span>Jess Simons.</span> Code by me.
 					</p>
-					<a className={styles.githubFooter}>GitHub</a>
+					<a className={styles.githubFooter} href="https://github.com/TheDemonOn">
+						GitHub
+					</a>
 				</footer>
 			</main>
 		</>
