@@ -245,6 +245,10 @@ export default function Home() {
 		}
 	}, [wrapper.current, content.current, screenWidth])
 
+	const reveal = () => {
+		console.log('Loaded')
+	}
+
 	return (
 		<>
 			<Head>
