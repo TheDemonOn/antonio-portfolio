@@ -1,12 +1,20 @@
 import { useState, useEffect, useLayoutEffect, useRef } from 'react'
 
 import Head from 'next/head'
-// import Image from 'next/image'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import Project from '../components/Project'
 import useInterval from '../hooks/useInterval'
 import useIntersect from '../hooks/useIntersect'
+
+import me from '../images/The_Boyz.jpg'
+import AutojackA from '../images/AutojackA.jpg'
+import AutojackB from '../images/AutojackB.jpg'
+import WordGeneratorA from '../images/RWGA.jpg'
+import WordGeneratorB from '../images/RWGB.jpg'
+import OldPortfolioA from '../images/OldPortfolioA.jpg'
+import OldPortfolioB from '../images/OldPortfolioB.jpg'
 
 export default function Home() {
 	const [changingTextNum, setChangingTextNum] = useState(0)
@@ -212,19 +220,6 @@ export default function Home() {
 			} else {
 				content.style.transform = `scale(${1})`
 			}
-		} else {
-			// let { width: cw, height: ch } = content.getBoundingClientRect()
-			// let { width: wrw, height: wrh } = wrapper.getBoundingClientRect()
-			// let scale = Math.min(wrw / cw, wrh / ch)
-			// let ratio = wrw / cw
-			// console.log(ratio)
-			// if (ratio < 2.45) {
-			// 	let num = ratio / 2.45
-			// 	console.log('This num: ' + num)
-			// 	content.style.transform = `scale(${num})`
-			// 	let text = document.getElementById('about-text')
-			// 	text.style.marginLeft = `${31 * num}rem`
-			// }
 		}
 	}
 
@@ -244,10 +239,6 @@ export default function Home() {
 			useScale(wrapper.current, content.current)
 		}
 	}, [wrapper.current, content.current, screenWidth])
-
-	const reveal = () => {
-		console.log('Loaded')
-	}
 
 	return (
 		<>
@@ -295,14 +286,17 @@ export default function Home() {
 				</div>
 				<div id="project-list" ref={refColorChange}>
 					<nav id="side-nav" className={sideNavClass}>
-						<a href="#1" className={styles.activeSideNav}></a>
-						<a href="#2"></a>
-						<a href="#3"></a>
-						<a href="#4"></a>
-						<a href="#5"></a>
+						<a href="#1" aria-label="Project 1" className={styles.activeSideNav}></a>
+						<a href="#2" aria-label="Project 2"></a>
+						<a href="#3" aria-label="Project 3"></a>
+						<a href="#4" aria-label="Project 4"></a>
+						<a href="#5" aria-label="Project 5"></a>
 					</nav>
 					<Project
 						title="Autojack"
+						src={AutojackA}
+						srcHover={AutojackB}
+						alt="Autojack site!"
 						position="1"
 						linkName="Get Jacked."
 						link="https://autojack.netlify.app/"
@@ -313,6 +307,9 @@ export default function Home() {
 					/>
 					<Project
 						title="Rhyming Word Generator"
+						src={WordGeneratorA}
+						srcHover={WordGeneratorB}
+						alt="Rhyming Word Generator site!"
 						position="2"
 						linkName="Generate Nonsense."
 						link="https://wordgenerator.netlify.app/"
@@ -320,32 +317,39 @@ export default function Home() {
 						of English words. This generator produces words unknown to man, and makes them mostly rhyme. Instant poetry."
 						ref={refMissedSticky}
 					/>
-					<Project
+					{/* <Project
 						title="Shop Antonio"
+						alt="Shop Antonio site!"
 						position="3"
 						linkName="Browse my fake store."
 						content="Feeling that I hadn't demonstrated enough practical real-world examples, I set out to create an e-commerce site with all the features you'd expect. Welcome to Shop Antonio."
 					/>
 					<Project
 						title="Random Test"
+						alt="Random Test site!"
 						position="4"
 						linkName="Be Random."
 						content="The project where I first learned how to use an API, react context, and chart.js for some visualization. It shows the difference between two methods of generating values, and their distribution of 0's or 1's in a row."
 						ref={refEndSticky}
-					/>
+					/> */}
 					<Project
 						title="First Portfolio"
+						src={OldPortfolioA}
+						srcHover={OldPortfolioB}
+						alt="My first portfolio site!"
 						position="5"
 						linkName="A blast to the not-so-distant past."
-						content="The first version of my portfolio, a labor of love, and an interesting gimmick, but ultimately not the representation of myself I desired."
+						content="The first version of my portfolio, a labor of love, gimmick, and a more in-depth explanation of the projects and their development."
 					/>
 				</div>
 				<div className={styles.section2} ref={refEndStatic} id="about-me">
 					<div className={styles.aboutMe} ref={wrapper}>
-						<div className={styles.collage} ref={content} id="collage">
+						<div className={styles.collage} ref={content} id="collage" aria-hidden="true">
 							<div className={styles.illustration}>illustration</div>
 							<div className={styles.photo}>photo</div>
-							<div className={styles.me}>me</div>
+							<div className={styles.me}>
+								<Image src={me} layout="fill" />
+							</div>
 							<div className={styles.signs} id="signs">
 								<div className={styles.sign1}>sign 1</div>
 								<div className={styles.sign2}>sign 2</div>
@@ -353,7 +357,6 @@ export default function Home() {
 								<div className={styles.sign4}>sign 4</div>
 							</div>
 						</div>
-						{/* <div className={styles.aboutText} id="about-text"> */}
 						<h3>Who I am</h3>
 						<h4>Antonio Zamora, front-end developer.</h4>
 						<p>
@@ -371,7 +374,6 @@ export default function Home() {
 							enjoy playing Dungeons and Dragons every Monday. I also love cats, cooking, and video
 							games.
 						</p>
-						{/* </div> */}
 						<div className={styles.aboutText} id="about-text">
 							<h3>Who I am</h3>
 							<h4>Antonio Zamora, front-end developer.</h4>
@@ -406,6 +408,7 @@ export default function Home() {
 									style={{
 										backgroundColor: blue,
 									}}
+									aria-hidden="true"
 								></div>
 								<p>linkedin</p>
 							</a>
@@ -414,6 +417,7 @@ export default function Home() {
 									style={{
 										backgroundColor: yellow,
 									}}
+									aria-hidden="true"
 								></div>
 								<p>me@codeantonio.com</p>
 							</a>
@@ -422,6 +426,7 @@ export default function Home() {
 									style={{
 										backgroundColor: purple,
 									}}
+									aria-hidden="true"
 								></div>
 								<p>937 782 9060</p>
 							</a>

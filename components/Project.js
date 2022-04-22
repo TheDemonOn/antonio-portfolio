@@ -18,7 +18,7 @@ const Project = React.forwardRef(
 				picture.style.display = 'unset'
 				hover.style.display = 'none'
 			}
-			hover.addEventListener('mouseleave', swapBack)
+			hover.addEventListener('mouseout', swapBack)
 		}, [])
 
 		return (
