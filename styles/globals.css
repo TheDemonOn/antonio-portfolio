@@ -15,6 +15,15 @@ body {
 	background-color: #fcf9f4;
 }
 
+a:focus-visible,
+button:focus-visible {
+	outline: 3.5px dashed darkorange;
+}
+
+#side-nav a:focus-visible {
+	background-color: darkorange !important;
+}
+
 h1,
 h2,
 h3,
