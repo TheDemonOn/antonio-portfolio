@@ -9,16 +9,23 @@ const Project = React.forwardRef(
 			let hover = document.getElementById('hover' + position)
 
 			const swapPicture = () => {
-				picture.style.display = 'none'
-				hover.style.display = 'unset'
+				if (window.innerWidth >= 950) {
+					picture.className = styles.pictureFrameTransition
+					hover.style.display = 'unset'
+				}
 			}
 			picture.addEventListener('mouseenter', swapPicture)
 
 			const swapBack = () => {
-				picture.style.display = 'unset'
-				hover.style.display = 'none'
+				if (window.innerWidth >= 950) {
+					picture.className = styles.pictureFrameFadeBack
+					setTimeout(() => {
+						picture.className = styles.pictureFrame
+						hover.style.display = 'none'
+					}, 200)
+				}
 			}
-			hover.addEventListener('mouseout', swapBack)
+			picture.addEventListener('mouseleave', swapBack)
 		}, [])
 
 		return (
@@ -26,7 +33,9 @@ const Project = React.forwardRef(
 				<div className={styles.fullSection} id={position} ref={ref}>
 					<div className={styles.right}>
 						<div className={styles.pictureFrame} id={'picture' + position}>
-							<Image src={src} alt={alt} />
+							<a href={link}>
+								<Image src={src} alt={alt} />
+							</a>
 						</div>
 
 						<div className={styles.pictureFrameHover} id={'hover' + position}>
