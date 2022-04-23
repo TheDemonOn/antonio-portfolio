@@ -81,6 +81,18 @@
 	border: solid !important;
 	border-width: 2px !important;
 }
+
+/* .pictureFrameTransition {
+	position: absolute;
+	border: solid;
+	width: 42vw;
+	height: 23.625vw;
+}
+.pictureFrameTransition > span {
+	border: solid !important;
+	border-width: 2px !important;
+} */
+
 .pictureFrameHover {
 	display: none;
 	width: 42vw;

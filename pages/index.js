@@ -5,6 +5,7 @@ import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 
 import Project from '../components/Project'
+import SVG from '../components/SVG'
 import useInterval from '../hooks/useInterval'
 import useIntersect from '../hooks/useIntersect'
 
@@ -351,10 +352,18 @@ export default function Home() {
 								<Image src={me} layout="fill" />
 							</div>
 							<div className={styles.signs} id="signs">
-								<div className={styles.sign1}>sign 1</div>
-								<div className={styles.sign2}>sign 2</div>
-								<div className={styles.sign3}>sign 3</div>
-								<div className={styles.sign4}>sign 4</div>
+								<div className={styles.sign1}>
+									<SVG name="sign1" />
+								</div>
+								<div className={styles.sign2}>
+									<SVG name="sign2" />
+								</div>
+								<div className={styles.sign3}>
+									<SVG name="sign3" />
+								</div>
+								<div className={styles.sign4}>
+									<SVG name="sign4" />
+								</div>
 							</div>
 						</div>
 						<h3>Who I am</h3>
@@ -409,7 +418,9 @@ export default function Home() {
 										backgroundColor: blue,
 									}}
 									aria-hidden="true"
-								></div>
+								>
+									<SVG name="linkedin" />
+								</div>
 								<p>linkedin</p>
 							</a>
 							<a>
@@ -418,7 +429,9 @@ export default function Home() {
 										backgroundColor: yellow,
 									}}
 									aria-hidden="true"
-								></div>
+								>
+									<SVG name="email" />
+								</div>
 								<p>me@codeantonio.com</p>
 							</a>
 							<a>
@@ -427,7 +440,9 @@ export default function Home() {
 										backgroundColor: purple,
 									}}
 									aria-hidden="true"
-								></div>
+								>
+									<SVG name="phone" />
+								</div>
 								<p>937 782 9060</p>
 							</a>
 						</div>

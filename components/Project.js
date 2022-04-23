@@ -31,7 +31,13 @@ const Project = React.forwardRef(
 
 						<div className={styles.pictureFrameHover} id={'hover' + position}>
 							<a href={link}>
-								<Image src={srcHover} alt={alt} loading="eager" priority="true" />
+								<Image
+									src={srcHover}
+									alt={alt}
+									placeholder="blur"
+									loading="eager"
+									priority="true"
+								/>
 							</a>
 						</div>
 					</div>

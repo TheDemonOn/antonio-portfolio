@@ -261,6 +261,14 @@
 .signs div {
 	border: solid;
 	border-width: 2px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.signs div svg {
+	/* border: solid; */
+	width: 70%;
 }
 .sign1 {
 	background-color: var(--yellow-color);
