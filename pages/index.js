@@ -221,9 +221,12 @@ export default function Home() {
 			// This actually scales the collage
 			if (scale - 0.08 < 1 && scale !== 1) {
 				content.style.transform = `scale(${scale - 0.08})`
+				content.style.margin = `-${(1 - scale) * 18}rem 0`
 			} else {
-				content.style.transform = `scale(${1})`
+				content.removeAttribute('style')
 			}
+		} else {
+			content.removeAttribute('style')
 		}
 	}
 
