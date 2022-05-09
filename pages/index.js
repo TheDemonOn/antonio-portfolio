@@ -16,10 +16,13 @@ import WordGeneratorA from '../images/RWGA.jpg'
 import WordGeneratorB from '../images/RWGB.jpg'
 import OldPortfolioA from '../images/OldPortfolioA.jpg'
 import OldPortfolioB from '../images/OldPortfolioB.jpg'
+import ShopA from '../images/ShopA.jpg'
+import ShopB from '../images/ShopB.jpg'
+import RandomA from '../images/RandomA.jpg'
+import RandomB from '../images/RandomB.jpg'
 
 export default function Home() {
 	const [changingTextNum, setChangingTextNum] = useState(0)
-	const [changingText, setChangingText] = useState('developer of the front-end.')
 
 	// This is a custom hook.
 	useInterval(() => {
@@ -103,7 +106,7 @@ export default function Home() {
 			let ratio = e[0].intersectionRatio
 			if (ratio > thresholdArr[3]) {
 				// First portfolio
-				setBgColor('#FADBF6')
+				setBgColor('#b2bada')
 				updateSideNav(4)
 			} else if (ratio >= thresholdArr[2]) {
 				// Random Test
@@ -115,7 +118,7 @@ export default function Home() {
 				updateSideNav(2)
 			} else if (ratio >= thresholdArr[0]) {
 				// Rhyming Word Generator
-				setBgColor(blue)
+				setBgColor('#8db9d0')
 				updateSideNav(1)
 			} else {
 				// Autojack
@@ -246,16 +249,19 @@ export default function Home() {
 			<Head>
 				<title>Antonio Zamora</title>
 			</Head>
-			<header className={styles.header}>
-				<div>
-					<a href="#project-list">Projects</a>
-					<a href="#about-me">About</a>
-				</div>
-				<span className={styles.antonio}>ANTONIO ZAMORA</span>
-				<div>
-					<a href="#contact">Contact</a>
-					<a href="https://github.com/TheDemonOn">GitHub</a>
-				</div>
+			<header>
+				<nav className={styles.header}>
+					<div>
+						<a href="#project-list">Projects</a>
+						<a href="#about-me">About</a>
+					</div>
+					<span className={styles.antonio}>ANTONIO ZAMORA</span>
+					<div>
+						<a href="#contact">Contact</a>
+						<a href="https://github.com/TheDemonOn">GitHub</a>
+					</div>
+				</nav>
+				<nav className={styles.headerMobile}></nav>
 			</header>
 			<main className={styles.main}>
 				<div className={styles.section} ref={refSideNavStatic}>
@@ -277,6 +283,9 @@ export default function Home() {
 								</li>
 								<li>
 									<span>enthusiast of VR.</span>
+								</li>
+								<li>
+									<span>shredder of cheese.</span>
 								</li>
 							</ul>
 						</div>
@@ -318,21 +327,27 @@ export default function Home() {
 						of English words. This generator produces words unknown to man, and makes them mostly rhyme. Instant poetry."
 						ref={refMissedSticky}
 					/>
-					{/* <Project
+					<Project
 						title="Shop Antonio"
+						src={ShopA}
+						srcHover={ShopB}
 						alt="Shop Antonio site!"
 						position="3"
 						linkName="Browse my fake store."
+						link="https://shopantonio.netlify.app/"
 						content="Feeling that I hadn't demonstrated enough practical real-world examples, I set out to create an e-commerce site with all the features you'd expect. Welcome to Shop Antonio."
 					/>
 					<Project
 						title="Random Test"
+						src={RandomA}
+						srcHover={RandomB}
 						alt="Random Test site!"
 						position="4"
 						linkName="Be Random."
+						link="https://randomnesstest.netlify.app/"
 						content="The project where I first learned how to use an API, react context, and chart.js for some visualization. It shows the difference between two methods of generating values, and their distribution of 0's or 1's in a row."
 						ref={refEndSticky}
-					/> */}
+					/>
 					<Project
 						title="First Portfolio"
 						src={OldPortfolioA}
