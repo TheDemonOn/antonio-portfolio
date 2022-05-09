@@ -1,6 +1,6 @@
 .fullSection {
 	display: flex;
-	min-height: 100vh;
+	height: max(100vh, 700px);
 	flex-direction: row-reverse;
 }
 .left {
@@ -161,8 +161,7 @@
 		all: unset;
 		display: flex;
 		overflow: unset;
-		min-height: 100vh;
-		max-height: 45rem;
+		height: max(100vh, 750px);
 		flex-direction: column;
 	}
 	.left {
@@ -170,7 +169,6 @@
 		position: relative;
 		width: min(100% - 20%);
 		margin-inline: auto;
-		/* border: solid; */
 		margin-top: 2rem;
 		margin-bottom: 2rem;
 	}
