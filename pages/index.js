@@ -318,7 +318,6 @@ export default function Home() {
 					<div id="video" className={styles.splitRight}>
 						<video
 							id="backgroundVideo"
-							// autoPlay
 							preload="auto"
 							muted
 							loop
@@ -397,7 +396,11 @@ export default function Home() {
 					<div className={styles.aboutMe} ref={wrapper}>
 						<div className={styles.collage} ref={content} id="collage" aria-hidden="true">
 							<div className={styles.illustration}>illustration</div>
-							<div className={styles.photo}>photo</div>
+							<div className={styles.photo}>
+								<video autoPlay muted loop className={styles.video}>
+									<source src="/Ton_Thoughtful.mp4" type="video/mp4"></source>
+								</video>
+							</div>
 							<div className={styles.me}>
 								<Image src={me} layout="fill" />
 							</div>
