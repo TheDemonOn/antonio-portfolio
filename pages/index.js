@@ -24,10 +24,28 @@ import RandomB from '../images/RandomB.jpg'
 export default function Home() {
 	const [changingTextNum, setChangingTextNum] = useState(0)
 
+	const checkToSeeIfPlay = () => {
+		if (initialVideoLoad === 1) {
+			document.getElementById('backgroundVideo').play()
+		}
+	}
+
 	// This is a custom hook.
-	useInterval(() => {
-		setChangingTextNum(changingTextNum + 1)
-	}, 3000)
+	useInterval(
+		() => {
+			setChangingTextNum(changingTextNum + 1)
+		},
+		3000,
+		checkToSeeIfPlay
+	)
+
+	const [initialVideoLoad, setInitialVideoLoad] = useState(0)
+
+	const InitialPlayLoad = () => {
+		if (initialVideoLoad === 0) {
+			setInitialVideoLoad(1)
+		}
+	}
 
 	const [changingStyle, setChangingStyle] = useState(styles.changingTextIntro)
 	const [rotatingElements, setRotatingElements] = useState()
@@ -258,8 +276,10 @@ export default function Home() {
 						<a href="#project-list">Projects</a>
 						<a href="#about-me">About</a>
 					</div>
-					<span className={styles.antonio}>ANTONIO ZAMORA</span>
-					<div>
+					<span className={styles.antonio}>
+						ANTONIO <b className="white">ZAMORA</b>
+					</span>
+					<div className="white">
 						<a href="#contact">Contact</a>
 						<a href="https://github.com/TheDemonOn">GitHub</a>
 					</div>
@@ -296,7 +316,17 @@ export default function Home() {
 						</div>
 					</div>
 					<div id="video" className={styles.splitRight}>
-						Video here
+						<video
+							id="backgroundVideo"
+							// autoPlay
+							preload="auto"
+							muted
+							loop
+							className={styles.video}
+							onCanPlay={InitialPlayLoad()}
+						>
+							<source src="/CodeAntonio_Reel_Small.mp4" type="video/mp4"></source>
+						</video>
 					</div>
 				</div>
 				<div id="project-list" ref={refColorChange}>

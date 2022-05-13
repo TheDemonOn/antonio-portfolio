@@ -66,6 +66,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	z-index: 5;
 }
 .splitRight {
 	width: 50%;
@@ -73,6 +74,7 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 }
 
 .firstText {
@@ -390,6 +392,16 @@
 	text-decoration-thickness: 1.2px;
 }
 
+.video {
+	position: absolute;
+	top: 0;
+	height: 100%;
+	width: 100%;
+	z-index: -10;
+	object-fit: cover;
+	z-index: 0;
+}
+
 @media (max-width: 942px) {
 	.aboutMe {
 		position: relative;
@@ -533,7 +545,7 @@
 		justify-content: center;
 		align-items: center;
 		min-height: 50vh;
-		height: max(50vh, 350px);
+		height: max(50vh, 450px);
 	}
 
 	.header {

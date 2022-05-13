@@ -44,6 +44,10 @@ a {
 	cursor: pointer;
 }
 
+b {
+	all: unset;
+}
+
 * {
 	box-sizing: border-box;
 }
@@ -69,6 +73,25 @@ ul li {
 .signs {
 	border: solid;
 	width: 50%;
+}
+
+.white {
+	color: var(--main-bg);
+}
+
+.white a::before {
+	content: '';
+	display: block;
+	position: relative;
+	width: auto;
+	height: 1.5px;
+	top: 1.9rem;
+	left: 0;
+	background-color: var(--main-bg) !important;
+	opacity: 1;
+	z-index: 0;
+	transform: scaleX(0%);
+	transition: all 0.3s ease;
 }
 
 #video {
@@ -127,5 +150,8 @@ footer {
 @media (max-width: 800px) {
 	#side-nav {
 		display: none;
+	}
+	.white {
+		color: black;
 	}
 }
