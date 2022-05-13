@@ -145,6 +145,194 @@ export default function SVG({ name, hover = false }) {
 					</svg>
 				)
 				break
+			case 'hamburger':
+				return (
+					<svg viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+						<g xmlns="http://www.w3.org/2000/svg">
+							<path d="m588 140h-476c-7.7305 0-14-6.2695-14-14v-28c0-7.7305 6.2695-14 14-14h476c7.7305 0 14 6.2695 14 14v28c0 7.7305-6.2695 14-14 14zm14 154v-28c0-7.7305-6.2695-14-14-14h-476c-7.7305 0-14 6.2695-14 14v28c0 7.7305 6.2695 14 14 14h476c7.7305 0 14-6.2695 14-14zm0 168v-28c0-7.7305-6.2695-14-14-14h-476c-7.7305 0-14 6.2695-14 14v28c0 7.7305 6.2695 14 14 14h476c7.7305 0 14-6.2695 14-14z" />
+							<use x="70" y="644" xlinkHref="#v" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use x="90.550781" y="644" xlinkHref="#e" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="104.359375"
+								y="644"
+								xlinkHref="#b"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="123.347656"
+								y="644"
+								xlinkHref="#a"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="142.242188"
+								y="644"
+								xlinkHref="#d"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="155.628906"
+								y="644"
+								xlinkHref="#b"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="174.617188"
+								y="644"
+								xlinkHref="#h"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="204.410156"
+								y="644"
+								xlinkHref="#g"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="224.453125"
+								y="644"
+								xlinkHref="#k"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="252.453125"
+								y="644"
+								xlinkHref="#j"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use x="280.3125" y="644" xlinkHref="#c" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="299.550781"
+								y="644"
+								xlinkHref="#i"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="319.484375"
+								y="644"
+								xlinkHref="#a"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="338.378906"
+								y="644"
+								xlinkHref="#f"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="367.554688"
+								y="644"
+								xlinkHref="#f"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="396.730469"
+								y="644"
+								xlinkHref="#a"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use x="415.625" y="644" xlinkHref="#h" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="445.414062"
+								y="644"
+								xlinkHref="#u"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="455.835937"
+								y="644"
+								xlinkHref="#t"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use x="475.875" y="644" xlinkHref="#g" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="495.921875"
+								y="644"
+								xlinkHref="#a"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use x="514.8125" y="644" xlinkHref="#s" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use x="70" y="672" xlinkHref="#r" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use x="82.183594" y="672" xlinkHref="#e" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use x="95.992188" y="672" xlinkHref="#c" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="115.226562"
+								y="672"
+								xlinkHref="#f"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="154.152344"
+								y="672"
+								xlinkHref="#d"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="167.535156"
+								y="672"
+								xlinkHref="#i"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use x="187.46875" y="672" xlinkHref="#b" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="216.207031"
+								y="672"
+								xlinkHref="#q"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="239.640625"
+								y="672"
+								xlinkHref="#c"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="258.878906"
+								y="672"
+								xlinkHref="#p"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use x="278.8125" y="672" xlinkHref="#o" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="308.492188"
+								y="672"
+								xlinkHref="#n"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="329.015625"
+								y="672"
+								xlinkHref="#e"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="342.820312"
+								y="672"
+								xlinkHref="#c"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="362.058594"
+								y="672"
+								xlinkHref="#m"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use x="371.65625" y="672" xlinkHref="#b" xmlnsXlink="http://www.w3.org/1999/xlink" />
+							<use
+								x="390.648438"
+								y="672"
+								xlinkHref="#l"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+							<use
+								x="407.242188"
+								y="672"
+								xlinkHref="#d"
+								xmlnsXlink="http://www.w3.org/1999/xlink"
+							/>
+						</g>
+					</svg>
+				)
 		}
 	}
 

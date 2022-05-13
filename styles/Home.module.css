@@ -545,13 +545,13 @@
 		margin-inline: auto;
 		left: 0;
 		right: 0;
-		visibility: hidden;
 	}
 
 	.header div {
 		min-width: 11rem;
 		display: flex;
 		justify-content: space-between;
+		display: none;
 	}
 
 	.header a {
@@ -564,16 +564,22 @@
 		font-family: aktiv-grotesk-extended, sans-serif;
 		font-weight: 500;
 		font-style: normal;
-		font-size: 1.5rem;
+		font-size: 1.3rem;
 		position: absolute;
 		margin-inline: auto;
-		width: 14rem;
+		width: unset;
 		right: 0;
 		left: 0;
+		text-align: center;
 	}
 
 	.headerMobile {
 		display: unset;
+		z-index: 100;
+		position: absolute;
+		width: 30px;
+		right: 1rem;
+		top: 1.4rem;
 	}
 
 	.sideNav {

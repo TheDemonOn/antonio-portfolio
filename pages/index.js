@@ -264,7 +264,9 @@ export default function Home() {
 						<a href="https://github.com/TheDemonOn">GitHub</a>
 					</div>
 				</nav>
-				<nav className={styles.headerMobile}></nav>
+				<nav className={styles.headerMobile}>
+					<SVG name="hamburger" />
+				</nav>
 			</header>
 			<main className={styles.main}>
 				<div className={styles.section} ref={refSideNavStatic}>
