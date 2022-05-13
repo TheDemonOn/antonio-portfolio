@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react'
 
 // Thanks to Dan Abramov's explanation and implementation of setInterval in hooks: https://overreacted.io/making-setinterval-declarative-with-react-hooks/
 
-export default function useInterval(callback, delay) {
+export default function useInterval(callback, delay, callback2) {
 	// First we create the ref which will store the function we want to pass into it.
 	const ref = useRef()
 
@@ -17,7 +17,9 @@ export default function useInterval(callback, delay) {
 		const tick = () => {
 			ref.current()
 		}
+		callback2()
 		let id = setInterval(tick, delay)
+
 		return () => {
 			clearInterval(id)
 		}
