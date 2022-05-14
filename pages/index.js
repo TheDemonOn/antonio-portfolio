@@ -315,7 +315,7 @@ export default function Home() {
 							</ul>
 						</div>
 					</div>
-					<div id="video" className={styles.splitRight}>
+					<div id="video" className={styles.splitRight} aria-hidden="true">
 						<video
 							id="backgroundVideo"
 							preload="auto"
@@ -397,7 +397,7 @@ export default function Home() {
 						<div className={styles.collage} ref={content} id="collage" aria-hidden="true">
 							<div className={styles.illustration}>illustration</div>
 							<div className={styles.photo}>
-								<video autoPlay muted loop className={styles.video}>
+								<video muted loop className={styles.video}>
 									<source src="/Ton_Thoughtful.mp4" type="video/mp4"></source>
 								</video>
 							</div>

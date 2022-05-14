@@ -106,7 +106,7 @@
 	margin-inline: auto;
 	left: 0;
 	right: 0;
-	z-index: 2;
+	z-index: 10;
 }
 
 .header div {
@@ -536,7 +536,7 @@
 		justify-content: center;
 		align-items: center;
 		min-height: 50vh;
-		height: max(50vh, 350px);
+		height: max(50vh, 300px);
 	}
 	.splitRight {
 		width: 100%;
@@ -596,5 +596,9 @@
 
 	.sideNav {
 		display: none;
+	}
+
+	.firstText {
+		margin-top: 2rem;
 	}
 }
