@@ -321,7 +321,7 @@ export default function Home() {
 		return () => {
 			window.removeEventListener('click', handleDropdownClose)
 		}
-	}, [handleDropdownClose])
+	}, [])
 
 	return (
 		<>
