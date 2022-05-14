@@ -71,6 +71,10 @@ export default function Home() {
 					rotatingElements[changingTextNum - 1].removeAttribute('class')
 				}
 			}
+			if (changingTextNum === 0) {
+				// Sync the video
+				document.getElementById('backgroundVideo').currentTime = 0
+			}
 		}
 	}, [changingTextNum])
 
@@ -265,6 +269,12 @@ export default function Home() {
 		}
 	}, [wrapper.current, content.current, screenWidth])
 
+	useEffect(() => {
+		let video = document.getElementById('collageVideo')
+		video.playbackRate = 0.5
+		video.play()
+	}, [])
+
 	return (
 		<>
 			<Head>
@@ -397,7 +407,7 @@ export default function Home() {
 						<div className={styles.collage} ref={content} id="collage" aria-hidden="true">
 							<div className={styles.illustration}>illustration</div>
 							<div className={styles.photo}>
-								<video muted loop className={styles.video}>
+								<video id="collageVideo" tabIndex="-1" muted loop className={styles.video}>
 									<source src="/Ton_Thoughtful.mp4" type="video/mp4"></source>
 								</video>
 							</div>
