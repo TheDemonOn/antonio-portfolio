@@ -67,4 +67,5 @@ const ProjectEvents = React.forwardRef(
 		)
 	}
 )
+ProjectEvents.displayName = 'Project Thing'
 export default ProjectEvents
