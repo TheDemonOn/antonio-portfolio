@@ -553,7 +553,7 @@ export default function Home() {
 								>
 									<SVG name="linkedin" />
 								</div>
-								<p>linkedin</p>
+								<p className="hoverEffect">linkedin</p>
 							</a>
 							<a>
 								<div
@@ -564,7 +564,7 @@ export default function Home() {
 								>
 									<SVG name="email" />
 								</div>
-								<p>me@codeantonio.com</p>
+								<p className="hoverEffect">me@codeantonio.com</p>
 							</a>
 							<a>
 								<div
@@ -575,7 +575,7 @@ export default function Home() {
 								>
 									<SVG name="phone" />
 								</div>
-								<p>937 782 9060</p>
+								<p className="hoverEffect">937 782 9060</p>
 							</a>
 						</div>
 					</div>
@@ -583,7 +583,7 @@ export default function Home() {
 				<footer>
 					<span className={styles.antonioFooter}>ANTONIO ZAMORA</span>
 					<p className={styles.credits}>
-						Design by <span>Jess Simons.</span> Code by me.
+						Design by <a>Jess Simons.</a> Code by me.
 					</p>
 					<a className={styles.githubFooter} href="https://github.com/TheDemonOn">
 						GitHub

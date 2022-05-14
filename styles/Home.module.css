@@ -377,10 +377,11 @@
 	font-size: 1.1rem;
 	bottom: 2rem;
 }
-.credits span {
+.credits a {
 	text-decoration: underline;
 	text-underline-offset: 0.5rem;
 	text-decoration-thickness: 1px;
+	text-decoration-color: #f0ece5;
 }
 .githubFooter {
 	position: absolute;
