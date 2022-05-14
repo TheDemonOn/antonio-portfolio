@@ -304,15 +304,15 @@ export default function Home() {
 						<a href="https://github.com/TheDemonOn">GitHub</a>
 					</div>
 				</nav>
-				<nav className={styles.headerMobile} onClick={openMobileNav}>
+				<button className={styles.headerMobile} onClick={openMobileNav}>
 					<SVG name="hamburger" />
-					<div className={mobileNavStyle} id="mobileNav" onClick={openMobileNav}>
+					<nav className={mobileNavStyle} id="mobileNav" onClick={openMobileNav}>
 						<a href="#project-list">Projects</a>
 						<a href="#about-me">About</a>
 						<a href="#contact">Contact</a>
 						<a href="https://github.com/TheDemonOn">GitHub</a>
-					</div>
-				</nav>
+					</nav>
+				</button>
 			</header>
 			<main className={styles.main}>
 				<div className={styles.section} ref={refSideNavStatic}>

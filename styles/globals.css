@@ -15,6 +15,10 @@ body {
 	background-color: #fcf9f4;
 }
 
+button {
+	all: unset;
+}
+
 a:focus-visible,
 button:focus-visible {
 	outline: 3.5px dashed darkorange;
