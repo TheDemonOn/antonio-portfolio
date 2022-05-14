@@ -275,6 +275,16 @@ export default function Home() {
 		video.play()
 	}, [])
 
+	const [mobileNavStyle, setMobileNavStyle] = useState(styles.mobileNavHidden)
+
+	const openMobileNav = () => {
+		if (mobileNavStyle === styles.mobileNavHidden) {
+			setMobileNavStyle(styles.mobileNavVisible)
+		} else {
+			setMobileNavStyle(styles.mobileNavHidden)
+		}
+	}
+
 	return (
 		<>
 			<Head>
@@ -294,8 +304,14 @@ export default function Home() {
 						<a href="https://github.com/TheDemonOn">GitHub</a>
 					</div>
 				</nav>
-				<nav className={styles.headerMobile}>
+				<nav className={styles.headerMobile} onClick={openMobileNav}>
 					<SVG name="hamburger" />
+					<div className={mobileNavStyle} id="mobileNav" onClick={openMobileNav}>
+						<a href="#project-list">Projects</a>
+						<a href="#about-me">About</a>
+						<a href="#contact">Contact</a>
+						<a href="https://github.com/TheDemonOn">GitHub</a>
+					</div>
 				</nav>
 			</header>
 			<main className={styles.main}>
@@ -329,6 +345,7 @@ export default function Home() {
 						<video
 							id="backgroundVideo"
 							preload="auto"
+							tabIndex="-1"
 							muted
 							loop
 							className={styles.video}
