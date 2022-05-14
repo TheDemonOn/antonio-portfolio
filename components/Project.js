@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import styles from '../styles/Project.module.css'
 import Image from 'next/image'
 
-const Project = React.forwardRef(
+const ProjectEvents = React.forwardRef(
 	({ title, linkName, link, content, position, src, srcHover, alt = 'No alt here.' }, ref) => {
 		useEffect(() => {
 			let picture = document.getElementById('picture' + position)
@@ -67,4 +67,4 @@ const Project = React.forwardRef(
 		)
 	}
 )
-export default Project
+export default ProjectEvents
