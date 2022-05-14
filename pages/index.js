@@ -211,7 +211,7 @@ export default function Home() {
 	})
 
 	// This function takes in two elements, a parent and a child, and sets the scale of the child dynamically relative to the parent.
-	const useScale = (wrapper, content) => {
+	const Scale = (wrapper, content) => {
 		if (window.innerWidth <= 800) {
 			content.style.transform = 'scale(1)'
 			let { width: cw, height: ch } = content.getBoundingClientRect()
@@ -265,7 +265,7 @@ export default function Home() {
 	// This useEffect will trigger the scaling function when the screen size changes and onload.
 	useEffect(() => {
 		if (wrapper.current && content.current) {
-			useScale(wrapper.current, content.current)
+			Scale(wrapper.current, content.current)
 		}
 	}, [wrapper.current, content.current, screenWidth])
 
