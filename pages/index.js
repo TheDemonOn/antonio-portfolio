@@ -583,7 +583,7 @@ export default function Home() {
 				<footer>
 					<span className={styles.antonioFooter}>ANTONIO ZAMORA</span>
 					<p className={styles.credits}>
-						Design by <a>Jess Simons.</a> Code by me.
+						Design by <a href="https://simonsjess.com/">Jess Simons.</a> Code by me.
 					</p>
 					<a className={styles.githubFooter} href="https://github.com/TheDemonOn">
 						GitHub
