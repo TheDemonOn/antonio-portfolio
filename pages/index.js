@@ -277,13 +277,51 @@ export default function Home() {
 
 	const [mobileNavStyle, setMobileNavStyle] = useState(styles.mobileNavHidden)
 
-	const openMobileNav = () => {
+	const mobileNavToggle = () => {
 		if (mobileNavStyle === styles.mobileNavHidden) {
 			setMobileNavStyle(styles.mobileNavVisible)
 		} else {
 			setMobileNavStyle(styles.mobileNavHidden)
 		}
 	}
+
+	const jumpToAboutSpecific = () => {
+		const about = document.getElementById('about-me')
+		const scroll = about.offsetTop + window.scrollY - 15
+		window.scroll({
+			top: scroll,
+		})
+	}
+
+	const keyboard = (e, func) => {
+		if (e.key === 'Enter') {
+			console.log(e)
+			func()
+		}
+	}
+
+	const handleDropdownClose = (e) => {
+		let menu = document.getElementById('mobileNav')
+		if (
+			typeof menu !== 'undefined' &&
+			menu !== null &&
+			window.getComputedStyle(menu).visibility === 'visible'
+		) {
+			// If the sort menu is currently open
+			console.log(menu, !menu.contains(e.target))
+			if (!menu.contains(e.target)) {
+				// if the area clicked is not within the menu, close it
+				mobileNavToggle()
+			}
+		}
+	}
+
+	useEffect(() => {
+		window.addEventListener('click', handleDropdownClose)
+		return () => {
+			window.removeEventListener('click', handleDropdownClose)
+		}
+	}, [handleDropdownClose])
 
 	return (
 		<>
@@ -294,7 +332,15 @@ export default function Home() {
 				<nav className={styles.header}>
 					<div>
 						<a href="#project-list">Projects</a>
-						<a href="#about-me">About</a>
+						<a
+							tabIndex="0"
+							onClick={jumpToAboutSpecific}
+							onKeyDown={(e) => {
+								keyboard(e, jumpToAboutSpecific)
+							}}
+						>
+							About
+						</a>
 					</div>
 					<span className={styles.antonio}>
 						ANTONIO <b className="white">ZAMORA</b>
@@ -304,9 +350,14 @@ export default function Home() {
 						<a href="https://github.com/TheDemonOn">GitHub</a>
 					</div>
 				</nav>
-				<button className={styles.headerMobile} onClick={openMobileNav}>
+				<button
+					className={styles.headerMobile}
+					onClick={(e) => {
+						e.stopPropagation(), mobileNavToggle()
+					}}
+				>
 					<SVG name="hamburger" />
-					<nav className={mobileNavStyle} id="mobileNav" onClick={openMobileNav}>
+					<nav className={mobileNavStyle} id="mobileNav" onClick={mobileNavToggle}>
 						<a href="#project-list">Projects</a>
 						<a href="#about-me">About</a>
 						<a href="#contact">Contact</a>
@@ -457,7 +508,7 @@ export default function Home() {
 						</p>
 						<p>I have experience taking web designs and turning them into reality.</p>
 
-						<h4>Some Text, those are words.</h4>
+						<h4>Antonio Zamora, a real human.</h4>
 						<p>
 							I was born and raised in the Bay Area, CA. I currently reside near Bloomington, IN. I
 							enjoy playing Dungeons and Dragons every Monday. I also love cats, cooking, and video
@@ -474,7 +525,7 @@ export default function Home() {
 								I primarily focus on heavy use of Javascript using React, and more recently Next.js.
 							</p>
 							<p>I have experience taking web designs and turning them into reality.</p>
-							<h4>Some Text, those are words.</h4>
+							<h4>Antonio Zamora, a real human.</h4>
 							<p>
 								I was born and raised in the Bay Area, CA. I currently reside near Bloomington, IN.
 							</p>
