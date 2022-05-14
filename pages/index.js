@@ -466,6 +466,7 @@ export default function Home() {
 						srcHover={OldPortfolioB}
 						alt="My first portfolio site!"
 						position="5"
+						link="https://oldportfolio1.netlify.app/"
 						linkName="A blast to the not-so-distant past."
 						content="The first version of my portfolio, a labor of love, gimmick, and a more in-depth explanation of the projects and their development."
 					/>
