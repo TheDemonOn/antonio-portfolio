@@ -286,16 +286,11 @@ export default function Home() {
 	}
 
 	const jumpToAboutSpecific = () => {
-		const about = document.getElementById('about-me')
-		const scroll = about.offsetTop + window.scrollY - 15
-		window.scroll({
-			top: scroll,
-		})
+		document.getElementById('about-me').scrollIntoView({ block: 'center' })
 	}
 
 	const keyboard = (e, func) => {
 		if (e.key === 'Enter') {
-			console.log(e)
 			func()
 		}
 	}
@@ -308,10 +303,9 @@ export default function Home() {
 			window.getComputedStyle(menu).visibility === 'visible'
 		) {
 			// If the sort menu is currently open
-			console.log(menu, !menu.contains(e.target))
 			if (!menu.contains(e.target)) {
 				// if the area clicked is not within the menu, close it
-				mobileNavToggle()
+				setMobileNavStyle(styles.mobileNavHidden)
 			}
 		}
 	}

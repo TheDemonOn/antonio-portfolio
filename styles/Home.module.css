@@ -58,6 +58,7 @@
 .section2 {
 	position: relative;
 	overflow: hidden;
+	padding-bottom: 5rem;
 }
 
 .splitLeft {
@@ -299,7 +300,7 @@
 	max-height: 50rem;
 	overflow: hidden;
 	background-color: var(--green-color);
-	margin-top: 5rem;
+	/* margin-top: 5rem; */
 }
 .contactContent {
 	/* border: solid; */
@@ -622,6 +623,6 @@
 		animation-duration: 0.5s;
 	}
 	.mobileNavVisible a {
-		margin: 1rem;
+		padding: 1rem;
 	}
 }
