@@ -34,13 +34,19 @@ const ProjectEvents = React.forwardRef(
 					<div className={styles.right}>
 						<div className={styles.pictureFrame} id={'picture' + position}>
 							<a href={link}>
-								<Image src={src} alt={alt} priority="true" />
+								<Image src={src} alt={alt} placeholder="true" priority="true" />
 							</a>
 						</div>
 
 						<div className={styles.pictureFrameHover} id={'hover' + position}>
 							<a href={link}>
-								<Image src={srcHover} alt={alt} loading="eager" priority="true" />
+								<Image
+									src={srcHover}
+									alt={alt}
+									loading="eager"
+									placeholder="true"
+									priority="true"
+								/>
 							</a>
 						</div>
 					</div>
