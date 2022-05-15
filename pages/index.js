@@ -392,7 +392,7 @@ export default function Home() {
 							src={VideoLoad}
 							layout="fill"
 							objectFit="cover"
-							placeholder="true"
+							placeholder="blur"
 							priority
 						></Image>
 						<video
