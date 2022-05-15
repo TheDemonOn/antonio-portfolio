@@ -564,7 +564,7 @@ export default function Home() {
 								>
 									<SVG name="email" />
 								</div>
-								<p className="hoverEffect">me@codeantonio.com</p>
+								<p className="hoverEffect">zamora88875@gmail.com</p>
 							</a>
 							<a>
 								<div
