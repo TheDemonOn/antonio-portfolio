@@ -9,6 +9,7 @@ import SVG from '../components/SVG'
 import useInterval from '../hooks/useInterval'
 import useIntersect from '../hooks/useIntersect'
 
+import VideoLoad from '../images/VideoLoad.jpg'
 import me from '../images/The_Boyz.jpg'
 import AutojackA from '../images/AutojackA.jpg'
 import AutojackB from '../images/AutojackB.jpg'
@@ -387,6 +388,13 @@ export default function Home() {
 						</div>
 					</div>
 					<div id="video" className={styles.splitRight} aria-hidden="true">
+						<Image
+							src={VideoLoad}
+							layout="fill"
+							objectFit="cover"
+							placeholder="true"
+							priority
+						></Image>
 						<video
 							id="backgroundVideo"
 							preload="auto"
