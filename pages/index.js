@@ -72,9 +72,8 @@ export default function Home() {
 					rotatingElements[changingTextNum - 1].removeAttribute('class')
 				}
 			}
-			if (changingTextNum === 0) {
-				// Sync the video
-				document.getElementById('backgroundVideo').currentTime = 0
+			if (changingTextNum === 3) {
+				document.getElementById('backgroundVideo').currentTime = 8.8
 			}
 		}
 	}, [changingTextNum])
