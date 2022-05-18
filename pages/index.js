@@ -447,6 +447,7 @@ export default function Home() {
 					aria-haspopup="true"
 					aria-controls="mobileNav"
 					aria-expanded={mobileNavExpanded}
+					aria-label="Navigation Menu"
 					id="mobileNavButton"
 				>
 					<SVG name="hamburger" />
