@@ -127,6 +127,24 @@ ul li {
 	transition: transform 0.8s ease;
 }
 
+#navSkip {
+	position: absolute;
+	padding: 0.6em;
+	color: #fff;
+	transform: translateY(-120%);
+	z-index: -1;
+	left: 1em;
+	top: 0.3em;
+	transition: transform 0.3s;
+}
+
+#navSkip:focus-visible {
+	outline: 5px dashed #ff8c00;
+	transform: translateY(0);
+	z-index: 100;
+	background: #000;
+}
+
 #video {
 	background-color: #8db9d0;
 	z-index: 0;

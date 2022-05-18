@@ -418,6 +418,9 @@ export default function Home() {
 			</Head>
 			<header>
 				<nav className={styles.header}>
+					<a href="#main-content" id="navSkip">
+						Skip Navigation
+					</a>
 					<div>
 						<a href="#project-list">Projects</a>
 						<a
@@ -473,7 +476,7 @@ export default function Home() {
 					</nav>
 				</button>
 			</header>
-			<main className={styles.main}>
+			<main className={styles.main} id="main-content">
 				<div className={styles.section} ref={refSideNavStatic}>
 					<div className={styles.splitLeft}>
 						<div className={styles.firstText}>
