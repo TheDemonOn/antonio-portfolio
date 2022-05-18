@@ -277,11 +277,23 @@ export default function Home() {
 
 	const [mobileNavStyle, setMobileNavStyle] = useState(styles.mobileNavHidden)
 
-	const mobileNavToggle = () => {
-		if (mobileNavStyle === styles.mobileNavHidden) {
-			setMobileNavStyle(styles.mobileNavVisible)
+	const mobileNavToggle = (request) => {
+		if (request === 'open' || request === 'close') {
+			if (request === 'open') {
+				setMobileNavStyle(styles.mobileNavVisible)
+				setMobileNavExpanded('true')
+			} else {
+				setMobileNavStyle(styles.mobileNavHidden)
+				setMobileNavExpanded('false')
+			}
 		} else {
-			setMobileNavStyle(styles.mobileNavHidden)
+			if (mobileNavStyle === styles.mobileNavHidden) {
+				setMobileNavStyle(styles.mobileNavVisible)
+				setMobileNavExpanded('true')
+			} else {
+				setMobileNavStyle(styles.mobileNavHidden)
+				setMobileNavExpanded('false')
+			}
 		}
 	}
 
@@ -305,7 +317,7 @@ export default function Home() {
 			// If the sort menu is currently open
 			if (!menu.contains(e.target)) {
 				// if the area clicked is not within the menu, close it
-				setMobileNavStyle(styles.mobileNavHidden)
+				mobileNavToggle('close')
 			}
 		}
 	}
@@ -316,6 +328,88 @@ export default function Home() {
 			window.removeEventListener('click', handleDropdownClose)
 		}
 	}, [])
+
+	const [mobileNavExpanded, setMobileNavExpanded] = useState('false')
+
+	const handleMobileNavButton = (e) => {
+		// KeyDown
+		switch (e.key) {
+			case 'ArrowDown':
+			case ' ':
+			case 'Enter':
+				e.preventDefault()
+				mobileNavToggle('open')
+				setTimeout(() => {
+					if (typeof e.target.attributes['aria-controls'] !== 'undefined') {
+						let target = e.target.attributes['aria-controls'].value
+						e.target.children[`${target}`].firstChild.focus()
+					}
+				}, 1)
+				break
+			case 'ArrowUp':
+				e.preventDefault()
+				mobileNavToggle('open')
+				setTimeout(() => {
+					if (typeof e.target.attributes['aria-controls'] !== 'undefined') {
+						let target = e.target.attributes['aria-controls'].value
+						e.target.children[`${target}`].lastChild.focus()
+					}
+				}, 1)
+				break
+		}
+	}
+
+	const handleMobileNavMenu = (e) => {
+		e.stopPropagation()
+		e.preventDefault()
+		switch (e.key) {
+			case ' ':
+			case 'Enter':
+				let x = e.target.attributes.href.value
+				if (x.slice(0, 1) === '#') {
+					setTimeout(() => {
+						let element = document.getElementById(x.substring(1))
+						console.log(element)
+						element.focus()
+						element.scrollIntoView()
+					}, 1)
+				} else {
+					// Github link
+					window.location.href = x
+				}
+				mobileNavToggle('close')
+				break
+			case 'Escape':
+				mobileNavToggle('close')
+				setTimeout(() => {
+					e.target.parentElement.parentElement.focus()
+				}, 1)
+				break
+			case 'ArrowUp':
+				if (e.target.previousElementSibling === null) {
+					// Go to last
+					e.target.parentElement.lastElementChild.focus()
+				} else {
+					e.target.previousElementSibling.focus()
+				}
+				break
+			case 'ArrowDown':
+				if (e.target.nextElementSibling === null) {
+					// Go to first
+					e.target.parentElement.firstElementChild.focus()
+				} else {
+					e.target.nextElementSibling.focus()
+				}
+				break
+			case 'Home':
+				console.log(e.target.parentElement.firstElementChild)
+				e.target.parentElement.firstElementChild.focus()
+				break
+			case 'End':
+				e.target.parentElement.lastElementChild.focus()
+				break
+		}
+	}
 
 	return (
 		<>
@@ -349,13 +443,32 @@ export default function Home() {
 					onClick={(e) => {
 						e.stopPropagation(), mobileNavToggle()
 					}}
+					onKeyDown={handleMobileNavButton}
+					aria-haspopup="true"
+					aria-controls="mobileNav"
+					aria-expanded={mobileNavExpanded}
+					id="mobileNavButton"
 				>
 					<SVG name="hamburger" />
-					<nav className={mobileNavStyle} id="mobileNav" onClick={mobileNavToggle}>
-						<a href="#project-list">Projects</a>
-						<a href="#about-me">About</a>
-						<a href="#contact">Contact</a>
-						<a href="https://github.com/TheDemonOn">GitHub</a>
+					<nav
+						className={mobileNavStyle}
+						id="mobileNav"
+						onClick={(e) => {
+							e.stopPropagation(), mobileNavToggle()
+						}}
+					>
+						<a href="#project-list" role="menuitem" onKeyDown={handleMobileNavMenu}>
+							Projects
+						</a>
+						<a href="#about-me" role="menuitem" onKeyDown={handleMobileNavMenu}>
+							About
+						</a>
+						<a href="#contact" role="menuitem" onKeyDown={handleMobileNavMenu}>
+							Contact
+						</a>
+						<a href="https://github.com/TheDemonOn" role="menuitem" onKeyDown={handleMobileNavMenu}>
+							GitHub
+						</a>
 					</nav>
 				</button>
 			</header>
