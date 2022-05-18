@@ -2,14 +2,13 @@ import { Html, Head, Main, NextScript } from 'next/document'
 
 export default function Document() {
 	return (
-		<Html>
+		<Html lang="en">
 			<Head>
 				<meta name="description" content="Antonio's portfolio site" />
 				<meta name="author" content="Antonio Zamora" />
 				<meta name="keywords" content="Antonio, portfolio, front end development" />
-				{/* <meta name="theme-color" content="#262538" /> */}
+				<meta name="theme-color" content="#fcf9f4" />
 				<meta name="language" content="English" />
-				{/* <meta name="revised" content="March 22nd, 2022" /> */}
 				<meta name="HandheldFriendly" content="true" />
 				<link rel="stylesheet" href="https://use.typekit.net/hah6qsj.css" />
 
