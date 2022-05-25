@@ -579,7 +579,7 @@ export default function Home() {
 						position="4"
 						linkName="Be Random."
 						link="https://randomnesstest.netlify.app/"
-						content="The project where I first learned how to use an API, react context, and chart.js for some visualization. It shows the difference between two methods of generating values, and their distribution of 0's or 1's in a row."
+						content="The project where I first learned how to use an API, react context, and chart.js for some visualization. Random Test shows the difference between two methods of generating values, and their distribution of 0's or 1's in a row."
 						ref={refEndSticky}
 					/>
 					<Project
