@@ -590,7 +590,7 @@ export default function Home() {
 						position="5"
 						link="https://oldportfolio1.netlify.app/"
 						linkName="A blast to the not-so-distant past."
-						content="The first version of my portfolio, a labor of love, gimmick, and a more in-depth explanation of the projects and their development."
+						content="The first version of my portfolio, a labor of love, a gimmick, and a more in-depth explanation of my projects and their development."
 					/>
 				</div>
 				<div className={styles.section2} ref={refEndStatic} id="about-me">
