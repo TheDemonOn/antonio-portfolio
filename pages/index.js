@@ -626,7 +626,7 @@ export default function Home() {
 						<h4>Antonio Zamora, front-end developer.</h4>
 						<p>
 							I found my love for programming when I decided to take a closer look at code and found
-							that solving problems was fun.
+							that solving problems is fun.
 						</p>
 						<p>
 							I primarily focus on heavy use of Javascript using React, and more recently Next.js.
@@ -644,7 +644,7 @@ export default function Home() {
 							<h4>Antonio Zamora, front-end developer.</h4>
 							<p>
 								I found my love for programming when I decided to take a closer look at code and
-								found that solving problems was fun.
+								found that solving problems is fun.
 							</p>
 							<p>
 								I primarily focus on heavy use of Javascript using React, and more recently Next.js.
