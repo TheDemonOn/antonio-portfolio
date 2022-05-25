@@ -72,8 +72,10 @@ export default function Home() {
 					rotatingElements[changingTextNum - 1].removeAttribute('class')
 				}
 			}
-			if (changingTextNum === 3) {
-				document.getElementById('backgroundVideo').currentTime = 8.8
+			if (changingTextNum === 1) {
+				document.getElementById('backgroundVideo').currentTime = 2.7
+			} else if (changingTextNum === 3) {
+				document.getElementById('backgroundVideo').currentTime = 8.7
 			}
 		}
 	}, [changingTextNum])
