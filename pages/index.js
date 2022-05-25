@@ -544,7 +544,7 @@ export default function Home() {
 						position="1"
 						linkName="Get Jacked."
 						link="https://autojack.netlify.app/"
-						content="An awe-inspiring display of my radical skills. Autojack is designed to do play
+						content="An awe-inspiring display of my radical skills. Autojack is designed to play
 								Blackjack so the user doesn't have to. But they totally can. And that's the beauty
 								of it. Ask yourself, where would we be without Autojack?"
 						ref={refSideNavSticky}
@@ -668,7 +668,7 @@ export default function Home() {
 							<h2>Get in touch</h2>
 						</div>
 						<div className={styles.links}>
-							<a>
+							<a href="https://www.linkedin.com/in/antonio-zamora-developer/">
 								<div
 									style={{
 										backgroundColor: blue,
