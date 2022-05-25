@@ -11,6 +11,7 @@ import useIntersect from '../hooks/useIntersect'
 
 import VideoLoad from '../images/VideoLoad.jpg'
 import me from '../images/The_Boyz.jpg'
+import Antonio from '../images/Ton_Headshot_2.jpg'
 import AutojackA from '../images/AutojackA.jpg'
 import AutojackB from '../images/AutojackB.jpg'
 import WordGeneratorA from '../images/RWGA.jpg'
@@ -595,7 +596,9 @@ export default function Home() {
 				<div className={styles.section2} ref={refEndStatic} id="about-me">
 					<div className={styles.aboutMe} ref={wrapper}>
 						<div className={styles.collage} ref={content} id="collage" aria-hidden="true">
-							<div className={styles.illustration}>illustration</div>
+							<div className={styles.illustration}>
+								<Image src={Antonio} layout="fill" />
+							</div>
 							<div className={styles.photo}>
 								<video id="collageVideo" tabIndex="-1" muted loop className={styles.video}>
 									<source src="/Ton_Thoughtful.mp4" type="video/mp4"></source>

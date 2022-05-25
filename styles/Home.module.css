@@ -229,6 +229,9 @@
 	border-width: 2px;
 	width: 10.5rem;
 	height: 13.5rem;
+	position: absolute;
+	z-index: 0;
+	top: 0;
 	background-color: var(--yellow-color);
 }
 
