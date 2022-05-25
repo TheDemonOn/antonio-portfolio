@@ -301,6 +301,7 @@ export default function Home() {
 
 	const jumpToAboutSpecific = () => {
 		document.getElementById('about-me').scrollIntoView({ block: 'center' })
+		history.pushState({}, '', '#about-me')
 	}
 
 	const keyboard = (e, func) => {
