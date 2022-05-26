@@ -668,7 +668,7 @@ export default function Home() {
 							<h2>Get in touch</h2>
 						</div>
 						<div className={styles.links}>
-							<a href="https://www.linkedin.com/in/antonio-zamora-developer/">
+							<a href="https://www.linkedin.com/in/codeantonio/">
 								<div
 									style={{
 										backgroundColor: blue,
