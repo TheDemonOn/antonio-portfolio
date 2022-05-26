@@ -131,10 +131,10 @@ ul li {
 	position: absolute;
 	padding: 0.6em;
 	color: #fff;
-	transform: translateY(-120%);
+	transform: translateY(-150%);
 	z-index: -1;
-	left: 1em;
-	top: 0.3em;
+	left: 1rem;
+	top: 0.3rem;
 	transition: transform 0.3s;
 }
 
