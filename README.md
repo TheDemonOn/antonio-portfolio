@@ -1,3 +1,5 @@
+## Code Antonio
+
 Hello this is my second version of my portfolio!
 
-Its made with Next.js
+It was built with Next.js.
