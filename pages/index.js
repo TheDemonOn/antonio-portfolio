@@ -490,7 +490,7 @@ export default function Home() {
 									<span>developer of the front-end.</span>
 								</li>
 								<li>
-									<span>manipulator of Javascript.</span>
+									<span>manipulator of JavaScript.</span>
 								</li>
 								<li>
 									<span>solver of problems.</span>
