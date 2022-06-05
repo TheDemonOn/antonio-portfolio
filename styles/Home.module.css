@@ -411,6 +411,10 @@
 	display: none;
 }
 
+.mobileHeaderLine {
+	display: none;
+}
+
 @media (max-width: 942px) {
 	.aboutMe {
 		position: relative;
@@ -544,8 +548,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		min-height: 50vh;
-		height: max(50vh, 300px);
+		height: 40vh;
 	}
 	.splitRight {
 		width: 100%;
@@ -553,8 +556,7 @@
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		min-height: 50vh;
-		height: max(50vh, 450px);
+		height: 60vh;
 	}
 
 	.header {
@@ -609,7 +611,7 @@
 	}
 
 	.firstText {
-		margin-top: 2rem;
+		margin-top: 4.5rem;
 	}
 
 	.mobileNavVisible {
@@ -627,5 +629,17 @@
 	}
 	.mobileNavVisible a {
 		padding: 1rem;
+	}
+
+	.mobileHeaderLine {
+		display: unset;
+		position: absolute;
+		width: 100%;
+		border-bottom: solid;
+		border-width: 2px;
+		top: 3.85rem;
+	}
+	.changing {
+		border-bottom: unset;
 	}
 }

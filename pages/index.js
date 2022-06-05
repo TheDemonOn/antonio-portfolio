@@ -139,7 +139,7 @@ export default function Home() {
 				updateSideNav(3)
 			} else if (ratio >= thresholdArr[1]) {
 				// Shop Antonio
-				setBgColor(green)
+				setBgColor('#bdd9b2')
 				updateSideNav(2)
 			} else if (ratio >= thresholdArr[0]) {
 				// Rhyming Word Generator
@@ -147,7 +147,7 @@ export default function Home() {
 				updateSideNav(1)
 			} else {
 				// Autojack
-				setBgColor(purple)
+				setBgColor('#e3ddf3')
 				updateSideNav(0)
 			}
 		},
@@ -479,6 +479,7 @@ export default function Home() {
 						</a>
 					</nav>
 				</button>
+				<div className={styles.mobileHeaderLine}></div>
 			</header>
 			<main className={styles.main} id="main-content">
 				<div className={styles.section} ref={refSideNavStatic}>
