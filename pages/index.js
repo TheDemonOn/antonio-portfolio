@@ -1,4 +1,4 @@
-import { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -260,7 +260,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('click', handleDropdownClose)
     }
-  }, [handleDropdownClose])
+  }, [])
 
   const [mobileNavExpanded, setMobileNavExpanded] = useState('false')
 
