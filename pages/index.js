@@ -60,7 +60,7 @@ export default function Home() {
   }, [])
 
   // This useEffect controls the changing text.
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (rotatingElements) {
       // changingTextNum is used to access the array of changing elements.
       // If it were to point to an index that doesn't exist it will reset
@@ -77,8 +77,6 @@ export default function Home() {
       }
       if (changingTextNum === 1) {
         document.getElementById('backgroundVideo').currentTime = 3
-      } else if (changingTextNum === 3) {
-        document.getElementById('backgroundVideo').currentTime = 9
       }
     }
   }, [changingTextNum])
@@ -471,7 +469,7 @@ export default function Home() {
             <div className={styles.windowInside}>
               <section className={styles.section2} id="about-me">
                 <div className={styles.aboutMe} ref={wrapper}>
-                  <h1 style={{ 'margin-bottom': '2rem' }}>
+                  <h1 style={{ marginBottom: '2rem' }}>
                     Antonio Zamora, front-end developer.
                   </h1>
                   <div
