@@ -24,6 +24,7 @@ import ShopA from '../images/ShopA.jpg'
 import ShopB from '../images/ShopB.jpg'
 import RandomA from '../images/RandomA.jpg'
 import RandomB from '../images/RandomB.jpg'
+import CIQ from '../images/ctrliq_logo.jpg'
 import Experience from '../components/Experience'
 
 export default function Home() {
@@ -342,6 +343,8 @@ export default function Home() {
     }
   }
 
+  // const experienceBoxSize
+
   return (
     <div className="rootDiv">
       <Head>
@@ -447,7 +450,7 @@ export default function Home() {
             <Image
               src={VideoLoad}
               layout="fill"
-              objectFit="cover"
+              style={{ objectFit: 'cover' }}
               placeholder="blur"
               priority
             ></Image>
@@ -544,7 +547,7 @@ export default function Home() {
                   </div>
                 </div>
                 <Experience
-                  src={'/images/ctrliq_logo.jpg'}
+                  src={CIQ}
                   title={'Software Engineer - UI'}
                   years={['2023', '2024']}
                   company={'CIQ, Inc.'}
@@ -555,7 +558,7 @@ export default function Home() {
                   ]}
                 />
                 <Experience
-                  src={'/images/ctrliq_logo.jpg'}
+                  src={CIQ}
                   title={'Engineering Apprentice'}
                   years={['2022', '2023']}
                   company={'CIQ, Inc.'}

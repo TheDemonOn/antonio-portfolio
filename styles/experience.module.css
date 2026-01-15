@@ -48,13 +48,6 @@
 }
 
 @media (max-width: 800px) {
-  .container {
-    /* display: flex;
-    margin: 2.5rem 0; */
-
-    /* flex-direction: column; */
-  }
-
   .image {
     width: 3rem;
     height: 3rem;

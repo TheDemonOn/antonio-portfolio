@@ -25,7 +25,7 @@ export default function Experience({
   return (
     <div className={styles.container} key={text[0]}>
       <div className={styles.image}>
-        <Image src={src} alt={alt} layout="fill" objectPosition={'relative'} />
+        <Image src={src} alt={alt} fill={true} />
       </div>
       <div className={styles.content}>
         <h2 className={styles.title}>{title}</h2>

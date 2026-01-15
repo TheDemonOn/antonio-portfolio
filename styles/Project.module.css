@@ -1,230 +1,217 @@
 .fullSection {
-	display: flex;
-	height: max(100vh, 700px);
-	flex-direction: row-reverse;
+  display: flex;
+  height: max(100vh, 700px);
+  flex-direction: row-reverse;
 }
 .left {
-	position: relative;
-	top: 12.8rem;
-	width: 50%;
-	padding-left: 9%;
+  position: relative;
+  top: 30vh;
+  width: 50%;
+  padding-left: 9%;
 }
 .right {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .project {
-	max-width: 33rem;
+  max-width: 33rem;
 }
 .projectSub {
-	padding-left: 1.2rem;
-	margin-top: 2.1rem;
-	font-family: aktiv-grotesk, sans-serif;
-	font-weight: lighter;
-	margin-right: 0.8rem;
+  padding-left: 1.2rem;
+  margin-top: 2.1rem;
+  font-family: aktiv-grotesk, sans-serif;
+  font-weight: lighter;
+  margin-right: 0.8rem;
 }
 .link {
-	position: absolute;
-	margin-top: 5rem;
-	/* top: 21rem; */
-	font-size: 1.3rem;
-	text-decoration: underline;
-	text-underline-offset: 0.4rem;
-	z-index: 10;
+  position: absolute;
+  margin-top: 5rem;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  text-underline-offset: 0.4rem;
+  z-index: 10;
 }
 
 .link::before {
-	content: '';
-	display: block;
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	top: 0;
-	left: 0;
-	background-color: var(--main-bg);
-	opacity: 0;
-	z-index: -1;
-	transform: scaleX(0%);
-	transform-origin: left;
-	transition: opacity 1s, transform 0.5s ease;
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--main-bg);
+  opacity: 0;
+  z-index: -1;
+  transform: scaleX(0%);
+  transform-origin: left;
+  transition: opacity 1s, transform 0.5s ease;
 }
 
 .link:hover::before {
-	z-index: -2;
-	position: absolute;
-	opacity: 0.65;
-	transform: scaleX(100%);
-	transform-origin: left;
-	transition: transform 0.5s ease;
+  z-index: -2;
+  position: absolute;
+  opacity: 0.65;
+  transform: scaleX(100%);
+  transform-origin: left;
+  transition: transform 0.5s ease;
 }
 
 .splitLeft {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .splitRight {
-	width: 50%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .pictureFrame {
-	width: 42vw;
-	height: 23.625vw;
-}
-.pictureFrame > a > span {
-	border: solid !important;
-	border-width: 2px !important;
+  width: 42vw;
+  height: 23.625vw;
+  border: solid;
+  border-width: 2px;
 }
 .pictureFrameFadeBack {
-	position: absolute;
-	width: 42vw;
-	height: 23.625vw;
-	z-index: 10;
-	animation-name: fade-in;
-	animation-duration: 200ms;
+  position: absolute;
+  width: 42vw;
+  height: 23.625vw;
+  z-index: 10;
+  animation-name: fade-in;
+  animation-duration: 200ms;
+  border: solid;
+  border-width: 2px;
 }
 @keyframes fade-in {
-	from {
-		opacity: 0;
-	}
-	to {
-		opacity: 1;
-	}
-}
-.pictureFrameFadeBack > a > span {
-	border: solid !important;
-	border-width: 2px !important;
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .pictureFrameTransition {
-	position: absolute;
-	width: 42vw;
-	height: 23.625vw;
-	opacity: 0;
-	z-index: 10;
-	animation-name: fade-out;
-	animation-duration: 200ms;
+  position: absolute;
+  width: 42vw;
+  height: 23.625vw;
+  opacity: 0;
+  z-index: 10;
+  animation-name: fade-out;
+  animation-duration: 200ms;
+  border: solid;
+  border-width: 2px;
 }
 @keyframes fade-out {
-	from {
-		opacity: 1;
-	}
-	to {
-		opacity: 0;
-	}
-}
-.pictureFrameTransition > a > span {
-	border: solid !important;
-	border-width: 2px !important;
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .pictureFrameHover {
-	display: none;
-	width: 42vw;
-	height: 23.625vw;
-}
-.pictureFrameHover > a > span {
-	border: solid !important;
-	border-width: 2px !important;
+  display: none;
+  width: 42vw;
+  height: 23.625vw;
+  border: solid;
+  border-width: 2px;
 }
 
 .image {
-	position: absolute;
+  position: absolute;
 }
 
 .headingText {
-	font-family: aktiv-grotesk-extended, sans-serif;
-	font-weight: 500;
-	font-style: normal;
-	font-size: 1.3rem;
+  font-family: aktiv-grotesk-extended, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  font-size: 1.3rem;
 }
 
 .projectTitle {
-	font-size: 2.6rem;
+  font-size: 2.6rem;
 }
 
 .description {
-	margin-top: 1rem;
-	font-size: 1.3rem;
-	line-height: 2rem;
+  margin-top: 1rem;
+  font-size: 1.3rem;
+  line-height: 2rem;
 }
 
 @media (max-width: 950px) {
-	.fullSection {
-		all: unset;
-		display: flex;
-		overflow: unset;
-		height: max(100vh, 750px);
-		flex-direction: column;
-	}
-	.left {
-		all: unset;
-		position: relative;
-		width: min(100% - 20%);
-		margin-inline: auto;
-		margin-top: 2rem;
-		margin-bottom: 2rem;
-	}
-	.right {
-		all: unset;
-		position: relative;
-		width: min(100% - 20%);
-		margin-inline: auto;
-		margin-top: 15vh;
-	}
-	.pictureFrame {
-		/* width: 42vw;
-		height: 23.625vw; */
-		all: unset;
-		display: block;
-		/* border: solid; */
-		height: 45vw;
-		width: 100%;
-	}
+  .fullSection {
+    all: unset;
+    display: flex;
+    overflow: unset;
+    height: max(100vh, 750px);
+    flex-direction: column;
+  }
+  .left {
+    all: unset;
+    position: relative;
+    width: min(100% - 20%);
+    margin-inline: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+  }
+  .right {
+    all: unset;
+    position: relative;
+    width: min(100% - 20%);
+    margin-inline: auto;
+    margin-top: 15vh;
+  }
+  .pictureFrame {
+    all: unset;
+    display: block;
+    height: 45vw;
+    width: 100%;
+    border: solid;
+    border-width: 2px;
+  }
 
-	.project {
-		/* max-width: 33rem; */
-		all: unset;
-	}
-	.projectSub {
-		/* padding-left: 1.2rem;
-		margin-top: 2.1rem; */
-		all: unset;
-		font-family: aktiv-grotesk, sans-serif;
-		font-weight: lighter;
-	}
-	.link {
-		all: unset;
-		position: relative;
-		font-size: 1.15rem;
-		text-decoration: underline;
-		text-underline-offset: 0.4rem;
-	}
+  .project {
+    all: unset;
+  }
+  .projectSub {
+    all: unset;
+    font-family: aktiv-grotesk, sans-serif;
+    font-weight: lighter;
+  }
+  .link {
+    all: unset;
+    position: relative;
+    font-size: 1.15rem;
+    text-decoration: underline;
+    text-underline-offset: 0.4rem;
+  }
 
-	.projectTitle {
-		margin-top: 1rem;
-		font-size: 1.8rem;
-	}
+  .projectTitle {
+    margin-top: 1rem;
+    font-size: 1.8rem;
+  }
 
-	.description {
-		position: relative;
-		margin-top: 1rem;
-		font-size: 1rem;
-		line-height: 1.7rem;
-		margin-bottom: 1rem;
-	}
-	.altText {
-		font-family: aktiv-grotesk-extended, sans-serif;
-		font-weight: 500;
-		font-style: normal;
-		font-size: 0.9rem;
-	}
+  .description {
+    position: relative;
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.7rem;
+    margin-bottom: 1rem;
+  }
+  .altText {
+    font-family: aktiv-grotesk-extended, sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 0.9rem;
+  }
 }

@@ -37,7 +37,12 @@ const ProjectEvents = React.forwardRef(
           <div className={styles.right}>
             <div className={styles.pictureFrame} id={'picture' + position}>
               <a href={link}>
-                <Image src={src} alt={alt} placeholder="blur" priority />
+                <Image
+                  src={src}
+                  alt={alt}
+                  priority
+                  style={{ position: 'relative', height: '100%', width: '100%' }}
+                />
               </a>
             </div>
 
@@ -47,8 +52,8 @@ const ProjectEvents = React.forwardRef(
                   src={srcHover}
                   alt={alt}
                   loading="eager"
-                  placeholder="blur"
                   priority
+                  style={{ position: 'relative', height: '100%', width: '100%' }}
                 />
               </a>
             </div>
