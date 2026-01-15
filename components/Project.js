@@ -40,7 +40,7 @@ const ProjectEvents = React.forwardRef(
                 <Image
                   src={src}
                   alt={alt}
-                  priority
+                  loading="eager"
                   style={{ position: 'relative', height: '100%', width: '100%' }}
                 />
               </a>
@@ -52,7 +52,6 @@ const ProjectEvents = React.forwardRef(
                   src={srcHover}
                   alt={alt}
                   loading="eager"
-                  priority
                   style={{ position: 'relative', height: '100%', width: '100%' }}
                 />
               </a>

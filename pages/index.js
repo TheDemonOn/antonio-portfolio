@@ -452,7 +452,8 @@ export default function Home() {
               layout="fill"
               style={{ objectFit: 'cover' }}
               placeholder="blur"
-              priority
+              loading="eager"
+              preload={true}
             ></Image>
             <video
               id="backgroundVideo"
@@ -482,16 +483,16 @@ export default function Home() {
                     aria-hidden="true"
                   >
                     <div className={styles.illustration}>
-                      <Image src={AntonioStraw} layout="fill" />
+                      <Image src={AntonioStraw} loading="eager" layout="fill" />
                     </div>
                     <div className={styles.photo}>
-                      <Image src={AntonioElf} layout="fill" />
+                      <Image src={AntonioElf} loading="eager" layout="fill" />
                     </div>
                     <div className={styles.me}>
-                      <Image src={AntonioOcean} layout="fill" />
+                      <Image src={AntonioOcean} loading="eager" layout="fill" />
                     </div>
                     <div className={styles.ferris} id="signs">
-                      <Image src={AntonioFerris} layout="fill" />
+                      <Image src={AntonioFerris} loading="eager" layout="fill" />
                     </div>
                   </div>
                   <div>
