@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  margin: 2.5rem 0;
+}
+
+/* .container * ul {
+  list-style-type: circle;
+  list-style-position: inside;
+} */
+
+.container * li {
+  list-style-type: square;
+  list-style-position: outside;
+  margin-left: 1rem;
+}
+
+.image {
+  /* border: solid; */
+  position: relative;
+  border: solid;
+  width: 10rem;
+  height: 10rem;
+  flex-shrink: 0;
+}
+
+.content {
+  margin: 0 2rem;
+}
+
+.company {
+  margin-bottom: 0.4rem;
+}
+
+.title {
+  font-family: aktiv-grotesk-extended, sans-serif;
+  font-size: 1.2rem;
+}
+
+.bulletPoint {
+  margin: 0.4rem 0rem;
+}
+
+@media (max-width: 942px) {
+  .image {
+    width: max(5rem, 10vw);
+    height: max(5rem, 10vw);
+  }
+}
+
+@media (max-width: 800px) {
+  .container {
+    /* display: flex;
+    margin: 2.5rem 0; */
+
+    /* flex-direction: column; */
+  }
+
+  .image {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .content {
+    margin: unset;
+    margin-left: 0.75rem;
+  }
+}
