@@ -29,7 +29,7 @@ const ProjectEvents = React.forwardRef(
         }
       }
       picture.addEventListener('mouseleave', swapBack)
-    }, [])
+    }, [position])
 
     return (
       <>

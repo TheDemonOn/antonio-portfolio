@@ -79,7 +79,7 @@ export default function Home() {
         document.getElementById('backgroundVideo').currentTime = 3
       }
     }
-  }, [changingTextNum])
+  }, [changingTextNum, rotatingElements])
 
   const [blue, setBlue] = useState()
   const [yellow, setYellow] = useState()
@@ -205,7 +205,7 @@ export default function Home() {
     if (wrapper.current && content.current) {
       Scale(wrapper.current, content.current)
     }
-  }, [wrapper.current, content.current, screenWidth])
+  }, [screenWidth])
 
   const [mobileNavStyle, setMobileNavStyle] = useState(styles.mobileNavHidden)
 
@@ -260,7 +260,7 @@ export default function Home() {
     return () => {
       window.removeEventListener('click', handleDropdownClose)
     }
-  }, [])
+  }, [handleDropdownClose])
 
   const [mobileNavExpanded, setMobileNavExpanded] = useState('false')
 
@@ -499,8 +499,8 @@ export default function Home() {
                       window dimension.
                     </p>
                     <p className={styles.aboutMeParagraph2}>
-                      I do not use AI in my work, not because it can't be a great tool,
-                      but because I want to further develop my skills internally.
+                      I do not use AI in my work, not because it can&apos;t be a great
+                      tool, but because I want to further develop my skills internally.
                     </p>
                     <div>
                       <div className={styles.iconTextContainer}>

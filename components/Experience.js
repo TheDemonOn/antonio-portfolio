@@ -20,7 +20,7 @@ export default function Experience({
         </li>
       ))
     )
-  }, [])
+  }, [text])
 
   return (
     <div className={styles.container} key={text[0]}>
