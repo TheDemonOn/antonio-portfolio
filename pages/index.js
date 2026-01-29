@@ -50,7 +50,7 @@ export default function Home() {
       setChangingTextNum(changingTextNum + 1)
     },
     3000,
-    checkToSeeIfPlay
+    checkToSeeIfPlay,
   )
 
   const [rotatingElements, setRotatingElements] = useState()
@@ -88,10 +88,10 @@ export default function Home() {
   useEffect(() => {
     setBlue(getComputedStyle(document.documentElement).getPropertyValue('--blue-color'))
     setYellow(
-      getComputedStyle(document.documentElement).getPropertyValue('--yellow-color')
+      getComputedStyle(document.documentElement).getPropertyValue('--yellow-color'),
     )
     setPurple(
-      getComputedStyle(document.documentElement).getPropertyValue('--purple-color')
+      getComputedStyle(document.documentElement).getPropertyValue('--purple-color'),
     )
   }, [])
 
@@ -382,7 +382,7 @@ export default function Home() {
         <button
           className={styles.headerMobile}
           onClick={(e) => {
-            e.stopPropagation(), mobileNavToggle()
+            ;(e.stopPropagation(), mobileNavToggle())
           }}
           onKeyDown={handleMobileNavButton}
           aria-haspopup="true"
@@ -396,7 +396,7 @@ export default function Home() {
             className={mobileNavStyle}
             id="mobileNav"
             onClick={(e) => {
-              e.stopPropagation(), mobileNavToggle()
+              ;(e.stopPropagation(), mobileNavToggle())
             }}
           >
             <a href="#project-list" role="menuitem" onKeyDown={handleMobileNavMenu}>
@@ -503,8 +503,8 @@ export default function Home() {
                       window dimension.
                     </p>
                     <p className={styles.aboutMeParagraph2}>
-                      I do not use AI in my work, not because it can&apos;t be a great
-                      tool, but because I want to further develop my skills internally.
+                      Human code first, AI review later. AI helps me to consider more ways
+                      of thinking, but it doesn&apos;t do my thinking for me!
                     </p>
                     <div>
                       <div className={styles.iconTextContainer}>
