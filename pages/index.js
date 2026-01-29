@@ -78,6 +78,8 @@ export default function Home() {
       }
       if (changingTextNum === 1) {
         document.getElementById('backgroundVideo').currentTime = 3
+      } else if (changingTextNum === 3) {
+        document.getElementById('backgroundVideo').currentTime = 9
       }
     }
   }, [changingTextNum, rotatingElements])
