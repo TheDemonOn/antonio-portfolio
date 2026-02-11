@@ -551,6 +551,7 @@ export default function Home() {
                 </div>
                 <Experience
                   src={CIQ}
+                  alt="CIQ"
                   title={'Software Engineer - UI'}
                   years={['2023', '2024']}
                   company={'CIQ, Inc.'}
@@ -562,6 +563,7 @@ export default function Home() {
                 />
                 <Experience
                   src={CIQ}
+                  Alt="CIQ"
                   title={'Engineering Apprentice'}
                   years={['2022', '2023']}
                   company={'CIQ, Inc.'}
