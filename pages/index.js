@@ -563,7 +563,7 @@ export default function Home() {
                 />
                 <Experience
                   src={CIQ}
-                  Alt="CIQ"
+                  alt="CIQ"
                   title={'Engineering Apprentice'}
                   years={['2022', '2023']}
                   company={'CIQ, Inc.'}
